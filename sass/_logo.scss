@@ -1,0 +1,16 @@
+.logobar{
+    display: flex;
+   width: 100%;
+    &__icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    background-color: $color-base;
+    width: 36rem;
+    height: 14rem;
+    left: 34rem;
+    
+    border: 1px solid #181823;
+    box-sizing: border-box;
+}
+}

@@ -1,0 +1,93 @@
+.skilset{
+    background-color: $color-base;
+    //grid-row: 4/ 5;
+    //grid-column: 1 / -1;
+    padding: 5rem;
+    max-width: 144rem;
+    height: auto;
+
+
+display: flex;
+justify-content: space-between;
+    //display: grid;
+    //grid-template-rows: 2fr;
+    //grid-template-columns: min-content 1fr;
+    //grid-column-gap: 2.5rem;
+
+ &__text{
+display: inline-block;
+    color: $color-text;
+     //grid-row: 1 / -1;
+     //grid-column: 1 / 2;
+    width: 41.6rem;
+    height: 22.5rem;
+    margin-right: 2rem;
+
+    &__title{
+        width: 18.9rem;
+        height: 6.6rem;
+        
+     }
+
+     &__paragraph{
+        line-height: 2.7rem;
+        width: 36.8rem;
+        height: 13.5rem;        
+     } 
+
+ }
+
+ 
+
+
+ &__skils{
+    //grid-row: 1 / -1;
+    //grid-column: 2 / 3;
+    //display: grid;
+    //grid-template-columns: repeat(auto-fit, 200px);
+    //grid-row-gap: 1.5rem;
+    //grid-column-gap: 2.5rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &__card{
+        width: 36.8rem;
+        height: 16.9rem;
+        margin-bottom: 2rem;
+        //display: grid;
+        //grid-template-rows: min-content repeat(2, max-content);
+        
+        //grid-row-gap: 1.5rem;
+
+        &-svg{
+            //grid-row: 1 / 2;
+            margin-bottom: 1rem;
+            width: 3.2rem;
+            height:3.2rem
+        }
+
+        &-title{
+            margin-bottom: 1rem;
+            width: 17.7rem;
+            height: 2.9rem;
+            top: 5.6rem;
+            color: $color-text;
+            //grid-row: 2 / 3;
+        }
+
+        &-paragraph{
+            width: 36.8rem;
+            height: 7.2rem;
+            top: 9.7rem;
+            color: $color-light-grey;
+            line-height: 2.4rem;
+            //grid-row: 3 / 4;
+        }
+    
+    }
+
+}
+
+
+}

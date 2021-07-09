@@ -1,0 +1,66 @@
+.business{
+    max-width: 1440px;
+    height: 731px;
+    padding-top: 15rem;
+    background-color: $color-base;
+  
+    &__container{
+        display: flex;
+        justify-content: space-around;
+
+        &__text{
+
+            &-title{
+                width: 52.6rem;
+                height: 6.6rem;
+                line-height: 6.6rem;
+                color: $color-text;
+            }
+
+            &-paragraph{
+                width: 52.6rem;
+                height: 5.4rem;
+                line-height: 2.7rem;
+                color: #8491A0;;
+            }
+
+        }
+
+        &__form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 4rem;
+
+            &-label{
+                width: 6.4re;
+                height: 2.4rem;           
+                color: $color-text;
+            }
+
+            &-input{
+                width: 52.6rem;
+                height: 5rem;
+                background-color: $color-level-1;
+                border: none;
+            }
+
+            &-message{
+                width: 52.6rem;
+                height: 10rem;
+                background-color: $color-level-1;
+                border: none;
+            }
+
+            &-btn{
+                width: 52.5rem;
+                height: 7.5rem;
+                padding: 2.4rem 3.3rem;
+                color: $color-text;
+                background-color: #5221E6;
+                border: none;
+            }
+
+        }
+    }
+}

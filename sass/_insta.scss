@@ -1,0 +1,71 @@
+.insta{
+    max-width: 1440px;
+    height: 60rem;
+    display: flex;
+    
+    &__container{
+       
+        display: flex;
+  
+
+        &__text{
+            background-color: #FBE4FF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            
+            &__1{
+                &-title{
+                    color: $color-level-1;
+                    align-self: flex-start;
+                    width: 28.5rem;
+                    height: 6.6rem;
+                    line-height: 6.6rem;
+                    margin-bottom: 3rem;
+                }
+        
+                &-paragraph{
+                    padding-right: 12rem;
+                    width: 63.6rem;
+                    height: 8.1rem;
+                    left: 7.2rem;
+                    top: 21rem;
+                    line-height: 2.7rem;
+                    color: #5B6876;
+                }
+            }
+
+            &-btn{
+                align-self: flex-start;
+                height: 2.4rem;
+                border: none;
+                color: $color-base;
+                border-bottom: 1px solid currentColor;
+                padding-bottom: 0.8rem;
+                cursor: pointer;
+                background-color: transparent;
+                line-height: 2.4rem;
+    
+            }
+    
+         
+            //grid-row: 7 / 8;
+            //grid-column:  1 / span 4;
+        }
+    }
+    
+        &__picture{
+         width: 66.6rem;
+    
+          &__img{
+            width: 100%;
+            height: 100%;
+          }
+          
+            //grid-row: 7 / 8;
+            //grid-column:  5 / span 4;
+        }
+    
+ 
+}

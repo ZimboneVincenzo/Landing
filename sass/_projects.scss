@@ -1,0 +1,199 @@
+.project{
+  background-color: $color-base;
+  padding-top: 10rem;
+  &__container{
+
+      display: flex;
+      justify-content: space-between;
+      
+
+    &__left{
+        display: flex;
+        flex-direction: column;
+        
+
+        &__text{
+
+            &-title{
+                color: #8491A0;
+                line-height: 2.4rem;
+           
+                width: 10.6rem;
+                height: 2.4rem;      
+            }
+
+            &-p{
+                width: 58.8rem;
+                height: 13.2rem;
+                color: $color-text;
+                line-height: 6.6rem;
+             
+            }
+        }
+
+        &__card1{
+            &-img{
+                width: 63.6rem;
+                height: 61.9rem;
+                left: 7.2rem;
+                top: 36.5rem;
+            }
+
+            &__container{
+                background-color: $color-level-1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 4rem 3.2rem;
+
+                &-title{
+                    color: $color-text;
+                    line-height: 2.7rem;
+                    width: 31.4rem;
+                    height: 2.9rem;
+                }
+    
+                &-p1{
+                    color: $color-text;
+                    width: 57.2rem;
+                    height: 8.1rem;
+                    left: 3.2rem;
+                    top: 8.7rem;
+                }
+
+                &-png{
+                    align-self: flex-end;
+                }
+            }
+
+          
+        }
+        
+        &__card2{
+
+            &-img{
+                width: 63.6rem;
+                height: 61.9rem;
+                left: 7.2rem;
+                top: 36.5rem;
+            }
+
+            &__container{
+                background-color: $color-level-1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 4rem 3.2rem;
+
+                &-title{
+                    color: $color-text;
+                    line-height: 2.7rem;
+                    width: 31.4rem;
+                    height: 2.9rem;
+                }
+    
+    
+                &-p2{
+                    color: $color-text;
+                    width: 57.2rem;
+                    height: 8.1rem;
+                    left: 3.2rem;
+                    top: 8.7rem;
+                }
+            }
+
+ 
+
+          
+        }
+    }
+
+    &__right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__card1{
+
+            &-img{
+                width: 63.6rem;
+                height: 61.9rem;
+                left: 7.2rem;
+                top: 36.5rem;
+            }
+
+            &__container{
+                background-color: $color-level-1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 4rem 3.2rem;
+
+                &-title{
+                    color: $color-text;
+                    line-height: 2.7rem;
+                    width: 31.4rem;
+                    height: 2.9rem;
+    
+                }
+    
+                &-p1{
+                    color: $color-text;
+                    width: 57.2rem;
+                    height: 8.1rem;
+                    left: 3.2rem;
+                    top: 8.7rem;
+                }
+            }
+
+          
+        }
+
+        &__card2{
+
+            &-img{
+                width: 63.6rem;
+                height: 61.9rem;
+                left: 7.2rem;
+                top: 36.5rem;
+            }
+            &__container{
+                background-color: $color-level-1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 4rem 3.2rem;
+
+                &-title{
+                    color: $color-text;
+                    line-height: 2.7rem;
+                    width: 31.4rem;
+                    height: 2.9rem;
+                }
+    
+                &-p2{
+                    color: $color-text;
+                    width: 57.2rem;
+                    height: 8.1rem;
+                    left: 3.2rem;
+                    top: 8.7rem;
+                }
+            }
+
+
+        }
+        &-btn{
+            background-color: $color-base;
+            color: $color-text;
+            width: 24.7rem;
+            height: 7.5rem;
+            left: 92.7rem;
+            top: 188.3rem;
+
+            border: 1px solid #5221E6;
+            box-sizing: border-box;
+        }
+
+    }
+  }
+}

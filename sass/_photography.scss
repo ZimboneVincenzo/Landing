@@ -1,0 +1,85 @@
+.photography{
+    background-color: $color-base;
+
+    &__text{
+
+        &-title{
+            width: 34.9rem;
+            height: 6.6rem;
+            margin-bottom: 4rem;
+            line-height: 6.6rem;
+            color: $color-text;
+        }
+
+        &-paragraph{
+            width: 63.6rem;
+            height: 5.4rem;
+            margin-bottom: 3.5rem;
+            line-height: 2.7rem;
+            color: #8491A0;
+        }
+    }
+
+    &__list{
+        display: flex;
+        margin-bottom: 3.5rem;
+
+        &__item{
+            display: flex;
+            align-items: center;
+            margin-right: 6rem;
+            width: auto;
+            height: 5.1rem;
+            border: 1px solid #5221E6;
+            list-style: none;
+            text-transform: uppercase;
+
+            &--active{
+                background-color: #5221E6;    
+            }
+            
+        }
+
+        &-link{
+            padding: 0 1rem 0 1rem;
+            color: $color-text;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+    }
+
+    &__img{
+        display: flex;
+        justify-content: space-between;
+
+        &-1{
+            width: 30.6rem;
+        height: 42rem;
+            background-image: url(../img/img-11.jfif);
+            background-size: cover;
+        }
+
+        &-2{
+            width: 30.6rem;
+            height: 42rem;
+            background-image: url(../img/img-12.jfif);
+            background-size: cover;
+        }
+
+        &-3{
+            width: 30.6rem;
+            height: 42rem;
+            background-image: url(../img/img-13.jfif);
+            background-size: cover;
+        }
+
+        &-4{
+            width: 30.6rem;
+            height: 42rem;
+            background-image: url(../img/img-14.jfif);
+            background-size: cover;
+        }
+    }
+
+}

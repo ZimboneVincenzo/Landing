@@ -1,0 +1,46 @@
+//COLOR PALETTE
+$color-base: #000000;
+
+$color-level-1: #181823;
+
+$color-light-grey: #DEECF9;
+$color-dark-grey: #C7E0F4;
+
+$color-text: #FFFFFF;
+
+$color-primary: #5221E6;
+$color-green-accent: #3CC74E;
+$color-pink-accent: #E95D90;
+$color-peach-accent: #FFF3E4;
+$color-violet-accent: #FBE4FF;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+}
+
+body{
+     font-size: 1.8rem;
+     font-weight: normal;
+
+     //background-color: $color-base;
+}
+
+.container{ 
+    padding: 4rem 7.2rem;
+    max-width: 192rem;
+    //display: grid;
+
+    //grid-template-rows: 110vh min-content 60rem min-content 14rem 62rem min-content 64rem 36rem 42rem 44.2rem;
+
+    //grid-template-columns:  repeat(8, minmax(min-content, 24rem));
+ }
