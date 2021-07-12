@@ -1,69 +1,83 @@
-.footer{
-    max-width: 1440px;
-    height: 422px;
-    padding: 4rem 12rem 4rem 4rem;
-    background-color:$color-level-1;
-    display: flex;
-    justify-content: space-between;
-      
+.footer {
+  padding: 4rem 12rem 4rem 4rem;
+  background-color: $color-level-1;
+  display: flex;
+  justify-content: space-between;
 
-    &__container{
-
-        &__left{
-    display: flex;
+  @include respond(phone) {
     flex-direction: column;
-    justify-content: space-between;
-    padding-top: 3rem;
-            &__img{
+  }
 
-                &-logo{
-                    height: 4rem;
-                    width: 13rem;
-                   
-                }
+  &__container {
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 3rem;
+      @include respond(phone) {
+        margin-bottom: 3rem;
+      }
 
-                &__social{
-                    margin-top: 2rem;
-                    &-logo{
-                        &:not(:last-child){
-                            margin-right: 1rem;
-                        }
-                        width: 2.4rem; 
-                        height: 2.4rem;
-                    }
-                }
-            }
-
-            &__text{
-
-                &-paragraph{
-                    width: 42.6rem;
-                    height: 2.4rem;
-                    color: #8491A0;
-                }
-            }
+      &__img {
+        &-logo {
+          height: 4rem;
+          width: 13rem;
         }
 
-        &__right{
-        display: flex;
-        padding-top: 3rem;
-            &__list{
-                list-style: none;
-               
-                &-item{
-                    width: 19.6rem;
-                    height: 4.8rem;
-                }
-
-                &-link{
-                    text-decoration: none;
-                    color: $color-text; 
-                    cursor: pointer;
-                }
+        &__social {
+          margin-top: 2rem;
+          &-logo {
+            &:not(:last-child) {
+              margin-right: 1rem;
             }
+            width: 2.4rem;
+            height: 2.4rem;
+          }
         }
-
+      }
     }
 
+    &__right {
+      display: flex;
+      padding-top: 3rem;
 
+      @include respond(phone) {
+        justify-content: space-between;
+        margin-bottom: 3rem;
+      }
+
+      &__list {
+        list-style: none;
+
+        &-item {
+          //width: 19.6rem;
+          height: 4.8rem;
+        }
+
+        &-link {
+          text-decoration: none;
+          color: $color-text;
+          cursor: pointer;
+
+          @include respond(phone) {
+            font-size: 2rem;
+            line-height: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    &-paragraph {
+      //width: 42.6rem;
+
+      color: #8491a0;
+      @include respond(phone) {
+        width: 80vw;
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+    }
+  }
 }

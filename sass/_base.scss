@@ -25,19 +25,24 @@ $color-violet-accent: #FBE4FF;
 html{
     box-sizing: border-box;
     font-size: 62.5%;
+    
+    @include respond(phone){
+        font-size: 50%;
+    }
+    
 
 }
 
 body{
      font-size: 1.8rem;
      font-weight: normal;
+     width: 100%;
 
      //background-color: $color-base;
 }
 
 .container{ 
     padding: 4rem 7.2rem;
-    max-width: 192rem;
     //display: grid;
 
     //grid-template-rows: 110vh min-content 60rem min-content 14rem 62rem min-content 64rem 36rem 42rem 44.2rem;

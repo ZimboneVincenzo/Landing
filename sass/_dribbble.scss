@@ -1,55 +1,106 @@
-.dribbble{
-    max-width: 1440px;
-    height: 121rem;
-    background-color: $color-base;
+.dribbble {
+  background-color: $color-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @include respond(phone) {
+    padding: 8rem 3rem;
+  }
+
+  &__container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    //width: 63.6rem;
+    //height: 21.3rem;
+    @include respond(phone) {
+        margin-bottom: 6rem;
+      }
 
-    &__container{
+    &-title {
+      display: inline-block;
+      //width: 32.5rem;
+      //height: 6.6rem;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 63.6rem;
-            height: 21.3rem;
+      line-height: 6.6rem;
+      color: $color-text;
+      @include respond(phone) {
+        font-size: 4rem;
+        line-height: 4.2rem;
+        margin-bottom: 4rem;
+      }
 
-            &-title{
-                display: inline-block;
-                width: 32.5rem;
-                height: 6.6rem;
+    }
+    &-paragraph {
+      //width: 63.6rem;
+      //height: 5.4rem;
 
-                line-height: 6.6rem;
-                color: $color-text;
-            }
-            &-paragraph{
-                width: 63.6rem;
-                height: 5.4rem;
+      line-height: 2.7rem;
+      color: #8491a0;
+      @include respond(phone) {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        margin-bottom: 6rem;
+      }
 
-                line-height: 2.7rem;
-                color:  #8491A0;
-            }
-
-            &-btn{  
-                align-self: start;
-                color: $color-text;
-                line-height: 2.4rem;
-                font-size: 16px;
-                
-                height: 2.4rem;             
-                border: none;
-                border-bottom: 1px solid currentColor;
-                padding-bottom: 1rem;
-                cursor: pointer;
-                background-color: transparent;
-            }
     }
 
-    &__img{
-        border-radius: 0.8rem;
-        max-width: 107.6rem;
-        height: 64rem;
-        background-image: url(../img/dribble.png);
-        background-size: cover; 
+    &-btn {
+      align-self: start;
+      color: $color-text;
+      line-height: 2.4rem;
+      font-size: 16px;
+
+      height: 2.4rem;
+      border: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1rem;
+      cursor: pointer;
+      background-color: transparent;
+
+      @include respond(phone) {
+        font-size: 2rem;
+        line-height: 3rem;
+        height: 4rem;
+      }
     }
+  }
+
+  &__img {
+    border-radius: 0.8rem;
+    height: 100%;
+
+    @include respond(phone) {
+      position: relative;
+    }
+
+    &__nav {
+      @include respond(phone) {
+        width: 100%;
+        height: 5rem;
+        position: absolute;
+        background-color: $color-level-1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      &-link {
+          margin-left: 1rem ;
+        @include respond(phone) {
+          width: 100%;
+          border-radius: 50%;
+          height: 2rem;
+          width: 2rem;
+          background-color: #8491a0;
+        }
+      }
+    }
+
+    &-p {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }

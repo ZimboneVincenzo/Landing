@@ -1,16 +1,42 @@
-.logobar{
-    display: flex;
-   width: 100%;
-    &__icon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    background-color: $color-base;
-    width: 36rem;
-    height: 14rem;
-    left: 34rem;
+.logobar {
+  display: flex;
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__group{
+    &-1{
+        @include respond(phone) {
+           display: flex;    
+          }
+    }
+    &-2{
+        @include respond(phone) {
+           display: flex;    
+          }
+    }
+    &-3{
+        @include respond(phone) {
+           display: flex;    
+          }
+    }
     
+    
+
+}
+
+  &__icon {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-base;
+    width: 100%;
+    height: 20rem;
+    //left: 34rem;
+
     border: 1px solid #181823;
     box-sizing: border-box;
-}
+  }
 }

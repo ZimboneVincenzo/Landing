@@ -10,8 +10,8 @@
 
 <body>
   <script type="module" src="/main.js"></script>
-  <!--NAV-->
-  <nav class="navigation container">
+  <!--NAV
+  <nav class="navigation">
     <img src="img/logonav.png" alt="Open logo" class="navigation__logo">
     <ul class="navigation-list">
       <li class="navigation-list__item body-2"><a href="#" class="navigation-list__link ">Experience</a></li>
@@ -21,31 +21,37 @@
           class="navigation-list__link">Contact</a></li>
     </ul>
   </nav>
-
+-->
   <!--HERO-->
   <div class="hero">
     <div class="hero__section">
+      <nav class="hero__section__nav__phone">
+        <img src="img/logonav.png" alt="Open logo" class="hero__section__nav__phone-logo">
+        <label class="hero__section__nav__phone-button">
+          <span class="hero__section__nav__phone-icon">&nbsp;</span>
+      </label>
+      </nav>
       <div class="hero__section__picture">
         <img src="img/img-1.jfif" alt="Picture 1" class="hero__section__picture__img-1">
       </div>
   
       <div class="hero__section__text">
         <div class="hero__section__text__1">
-          <p class="hero__section__text__1-p heading-1">I'm Robin Williams. A product designer <span class="hero__section__text__1-span">based in
+          <p class="hero__section__text__1-p ">I'm Robin Williams. A product designer <span class="hero__section__text__1-span">based in
               Italy.</span></p>
         </div>
         <div class="hero__section__text__2">
           <p class="hero__section__text__2-p body-2">I'm probably the most passionate designer you will ever get to
-            workwith.
+            work with.
             If you have a great project that needs some amazing skills, i'm your guy.</p>
         </div>
       </div>
     </div>
   </div>
 
+<!--WORK-->
 
-  <!--WORK-->
-  <div class="work container">
+  <div class="work">
     <div class="work__text">
       <p class="work__text-experience body-2">work experience</p>
       <h2 class="work__text-companies heading-2">Companiens I have worked for in the past</h2>
@@ -64,10 +70,9 @@
       <div class="work__card__2">
         <div class="work__card__2">
           <h1 class="work__card__2-number label-1">02</h1>
-          <h4 class="work__card__2__companies"><span class="work__card__2__companies-color2">Google,</span> Interaction
+          <h4 class="work__card__2__companies"><span class="work__card__2__companies-color2">Facebook,</span> Interaction
             Designer</h4>
-          <p class="work__card__2-paragraph heading-3">I currently am lead designer on the interaction design team fo
-            Google Play.
+          <p class="work__card__2-paragraph heading-3">I’ve worked on a wide variety of internal tools for facebook over the past 6 years.
           </p>
         </div>
       </div>
@@ -76,23 +81,22 @@
           <h1 class="work__card__3-number label-1">03</h1>
           <h4 class="work__card__3__companies"><span class="work__card__3__companies-color3">Google,</span> Interaction
             Designer</h4>
-          <p class="work__card__3-paragraph heading-3">I currently am lead designer on the interaction design team fo
-            Google Play.
+          <p class="work__card__3-paragraph heading-3">I started my design career with Dribbble. I was incharge of creating illustrations for the platform.
           </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!--MID-->
+<!--Philosophy-->
   <div class="mid">
     <div class="mid__text">
-      <div class="mid__text__container container">
+      <div class="mid__text__container">
         <div class="mid__text__container__div">
           <h2 class="mid__text__container__div-title heading-2">
             Philosophy & values
           </h2>
-          <p class="mid__text__container__div-paragraph body-2">
+          <p class="mid__text__container__div-paragraph body-1">
             I think everyone wants the same thing - relationship with humanity,
             peace with metaphysical, and experience with the universe. I try to grasp
             these things with my values: autenticity, creativity, & hospitality.
@@ -107,7 +111,7 @@
     </div>
   </div>
 
-  <!--Skilset-->
+<!--skilset-->
   <div class="skilset">
     <div class="skilset__text">
       <h2 class="skilset__text__title heading-2">Skilset</h2>
@@ -159,24 +163,39 @@
   </div>
 
 
-  <!--LOGO-->
+
   <div class="logobar">
-    <div class="logobar__icon">
-      <img src="img/Group 60.png" alt="">
+    <div class="logobar__group-1">
+      <div class="logobar__icon">
+        <img src="img/Group 60.png" alt="">
+      </div>
+      <div class="logobar__icon">
+        <img src="img/Group 67.png" alt="">
+      </div>
     </div>
-    <div class="logobar__icon">
-      <img src="img/Group 67.png" alt="">
+    <div class="logobar__group-2">
+      <div class="logobar__icon">
+        <img src="img/Group 68.png" alt="">
+      </div>
+      <div class="logobar__icon">
+        <img src="img/Fresh.png" alt="">
+      </div>
     </div>
-    <div class="logobar__icon">
-      <img src="img/Group 68.png" alt="">
+    <div class="logobar__group-3">
+      <div class="logobar__icon">
+        <img src="img/Group 110.png" alt="">
+      </div>
+      <div class="logobar__icon">
+        <img src="img/Vector.png" alt="">
+      </div>
     </div>
-    <div class="logobar__icon">
-      <img src="img/Fresh.png" alt="">
-    </div>
+
+
+
   </div>
 
-  <!--PROJECTS-->
-  <div class="project container">
+
+  <div class="project">
     <div class="project__container">
       <div class="project__container__left">
 
@@ -218,20 +237,19 @@
         <div class="project__container__right__card2">
           <img src="img/img-6.jfif" alt="" class="project__container__right__card2-img">
           <div class="project__container__right__card2__container">
-            <h3 class="project__container__right__card2__container-title heading-3">CoinView Mobile App Design</h3>
-            <p class="project__container__right__card2__container-p2 ">I worked with the guys at CBRE to redesign their
-              entire website and mobile app fro both Android and iOS.
-              This project lasted for 4 months and was a very challenging one.</p>
+            <h3 class="project__container__right__card2__container-title heading-3">T-Box Mobile Design</h3>
+            <p class="project__container__right__card2__container-p2 ">I worked with the guys at CBRE to redesign their entire website and mobile app fro both Android and iOS. 
+              This project lasted for 4 months and was a very challenging one..</p>
           </div>
         </div>
         <button class="project__container__right-btn">View all projects</button>
       </div>
     </div>
   </div>
-  <!--INSTA-->
+
   <div class="insta">
     <div class="insta__container">
-      <div class="insta__container__text container">
+      <div class="insta__container__text">
         <div class="insta__container__text__1">
           <h2 class="insta__container__text__1-title heading-2">
             Instagram
@@ -252,8 +270,8 @@
 
   </div>
 
-  <!--DRIBBLE-->
-  <div class="dribbble container">
+
+  <div class="dribbble">
     <div class="dribbble__container">
       <h2 class="dribbble__container-title heading-2">
         My Dribbble
@@ -264,11 +282,18 @@
       </p>
       <button class="dribbble__container-btn">Follow me on Dribbble</button>
     </div>
-    <div class="dribbble__img"></div>
+    <div class="dribbble__img">
+      <div class="dribbble__img__nav">
+        <div class="dribbble__img__nav-link"></div>
+        <div class="dribbble__img__nav-link"></div>
+        <div class="dribbble__img__nav-link"></div>
+      </div>
+        <img src="img/dribble.png" alt="" class="dribbble__img-p">
+      
+    </div>
   </div>
 
-  <!--STICKY-->
-  <div class="sticky container">
+  <div class="sticky">
     <div class="sticky__text">
       <div class="sticky__text__container">
         <h2 class="sticky__text__container-title heading-2">
@@ -283,7 +308,7 @@
     </div>
     <div class="sticky__card">
       <div class="sticky__card__container1">
-        <div class="sticky__card__container1-img"></div>
+        <img src="img/img-8.jfif" alt="" class="sticky__card__container1-img">
         <div class="sticky__card__container1__text">
           <p class="sticky__card__container1__text-paragraph">‘’Robin is one of the best designers
             I have worked with in my entire life. He is a designer who is very capable of taking up complex projects and
@@ -297,7 +322,7 @@
       </div>
 
       <div class="sticky__card__container2">
-        <div class="sticky__card__container2-img"></div>
+        <img src="img/img-9.jfif" alt="" class="sticky__card__container2-img">
         <div class="sticky__card__container2__text">
           <p class="sticky__card__container2__text-paragraph">‘’I think Robin has an incredible gift. It has been an
             absolute pleasure to work with a designer of this caliber.’’</p>
@@ -310,7 +335,7 @@
       </div>
 
       <div class="sticky__card__container3">
-        <div class="sticky__card__container3-img"></div>
+        <img src="img/img-10.jfif" alt="" class="sticky__card__container3-img">
         <div class="sticky__card__container3__text">
           <p class="sticky__card__container3__text-paragraph">‘’All I can say that, Robin is a phenomenal designer. The
             wavelength at which he thinks is astoundaing. I love the focus, passion and attention to detial in the
@@ -327,8 +352,7 @@
   </div>
 
 
-  <!--PHOTOGRAPHY-->
-  <div class="photography container">
+  <div class="photography">
     <div class="photography__text ">
       <h2 class="photography__text-title heading-2">
         Photography
@@ -347,16 +371,25 @@
       <li class="photography__list__item heading-4"><a class="photography__list-link" href="#">brazil</a></li>
     </ul>
 
+    <ul class="photography__phonelist">
+      <li class="photography__phonelist__item"><a href="" class="photography__phonelist-link">italy</a></li>
+      <li class="photography__phonelist__item"><a href="" class="photography__phonelist-link">australia</a></li>
+    </ul>
+
+    <ul class="photography__phonelist">
+      <li class="photography__phonelist__item"><a href="" class="photography__phonelist-link">india</a></li>
+      <li class="photography__phonelist__item"><a href="" class="photography__phonelist-link">brazil</a></li>
+    </ul>
+
     <div class="photography__img">
-      <div class="photography__img-1"></div>
-      <div class="photography__img-2"></div>
-      <div class="photography__img-3"></div>
-      <div class="photography__img-4"></div>
+      <img src="img/img-11.jfif" alt="" class="photography__img-1">
+      <img src="img/img-12.jfif" alt="" class="photography__img-2">
+      <img src="img/img-13.jfif" alt="" class="photography__img-3">
+      <img src="img/img-14.jfif" alt="" class="photography__img-4">
     </div>
   </div>
 
-  <!--BUSINESS-->
-  <div class="business container">
+  <div class="business ">
     <div class="business__container">
       <div class="business__container__text">
         <h2 class="business__container__text-title heading-2">
@@ -386,7 +419,7 @@
   </div>
 
 
-  <!--FOOTER-->
+
   <footer class="footer">
     <div class="footer__container__left">
       <div class="footer__container__left__img">
@@ -397,11 +430,7 @@
           <img src="img/twitter.svg" alt="" class="footer__container__left__img__social-logo">
         </div>
       </div>
-      <div class="footer__container__left__text">
-       <p class="footer__container__left__text-paragraph body-2">
-        Not Copyright 2020 • Robin Williams. Webflow cloneable
-       </p>
-      </div>
+     
     </div>
 
     <div class="footer__container__right">
@@ -418,8 +447,13 @@
           <li class="footer__container__right__list-item body-2"><a class="footer__container__right__list-link" href="#">Reading List</a></li>
         </ul>
     </div>
-  </footer>
 
+    <div class="footer__text">
+      <p class="footer__text-paragraph body-2">
+       Not Copyright 2020 • Robin Williams. Webflow cloneable
+      </p>
+     </div>
+  </footer>
 
 </body>
 

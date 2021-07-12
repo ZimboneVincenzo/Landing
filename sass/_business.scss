@@ -1,66 +1,99 @@
-.business{
-    max-width: 1440px;
-    height: 731px;
-    padding-top: 15rem;
-    background-color: $color-base;
-  
-    &__container{
-        display: flex;
-        justify-content: space-around;
+.business {
+  padding-top: 15rem;
+  background-color: $color-base;
 
-        &__text{
+  @include respond(phone) {
+    padding: 6rem 2rem;
+  }
 
-            &-title{
-                width: 52.6rem;
-                height: 6.6rem;
-                line-height: 6.6rem;
-                color: $color-text;
-            }
+  &__container {
+    display: flex;
+    justify-content: space-around;
 
-            &-paragraph{
-                width: 52.6rem;
-                height: 5.4rem;
-                line-height: 2.7rem;
-                color: #8491A0;;
-            }
-
-        }
-
-        &__form{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-bottom: 4rem;
-
-            &-label{
-                width: 6.4re;
-                height: 2.4rem;           
-                color: $color-text;
-            }
-
-            &-input{
-                width: 52.6rem;
-                height: 5rem;
-                background-color: $color-level-1;
-                border: none;
-            }
-
-            &-message{
-                width: 52.6rem;
-                height: 10rem;
-                background-color: $color-level-1;
-                border: none;
-            }
-
-            &-btn{
-                width: 52.5rem;
-                height: 7.5rem;
-                padding: 2.4rem 3.3rem;
-                color: $color-text;
-                background-color: #5221E6;
-                border: none;
-            }
-
-        }
+    @include respond(phone) {
+      flex-direction: column;
     }
+
+    &__text {
+      &-title {
+        //width: 52.6rem;
+        //height: 6.6rem;
+        line-height: 6.6rem;
+        color: $color-text;
+
+        @include respond(phone) {
+          font-size: 4rem;
+          line-height: 4.2rem;
+          margin-bottom: 3rem;
+        }
+      }
+
+      &-paragraph {
+        //width: 52.6rem;
+        //height: 5.4rem;
+        line-height: 2.7rem;
+        color: #8491a0;
+
+        @include respond(phone) {
+          font-size: 2.3rem;
+          line-height: 3.5rem;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+
+      &-label {
+        //width: 6.4re;
+        //height: 2.4rem;
+        color: $color-text;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+      }
+
+      &-input {
+        //width: 52.6rem;
+        //height: 5rem;
+        background-color: $color-level-1;
+        border: none;
+        @include respond(phone) {
+          height: 6.5rem;
+        }
+      }
+
+      &-message {
+        //width: 52.6rem;
+        //height: 10rem;
+        background-color: $color-level-1;
+        border: none;
+
+        @include respond(phone) {
+          height: 12rem;
+        }
+      }
+
+      &-btn {
+        //width: 52.5rem;
+        height: 7.5rem;
+        padding: 2.4rem 3.3rem;
+        color: $color-text;
+        background-color: #5221e6;
+        border: none;
+
+        @include respond(phone) {
+          font-size: 2.2rem;
+          line-height: 3.5rem;
+          height: 9rem;
+        }
+      }
+    }
+  }
 }

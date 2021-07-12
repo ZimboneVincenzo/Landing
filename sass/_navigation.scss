@@ -1,7 +1,10 @@
 .navigation{ 
+
+    @include respond(phone) {
+        display: none;
+      }
     position: fixed;
-    width: 100%;
-    height: 8.8rem;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
