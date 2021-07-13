@@ -65,7 +65,16 @@ html {
     font-size: 50%;
   }
 }
-
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
 body {
   font-size: 1.8rem;
   font-weight: normal;
@@ -82,8 +91,9 @@ body {
   align-items: center;
   justify-content: space-around;
   z-index: 100;
+  width: 100%;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .navigation {
     display: none;
   }
@@ -92,6 +102,7 @@ body {
   height: 2.4rem;
   width: 7.84rem;
   margin-right: auto;
+  margin-left: 2rem;
 }
 .navigation-list {
   display: flex;
@@ -112,17 +123,162 @@ body {
   padding: 3.2rem 2.4rem;
 }
 
+/*
+.hero {
+  background-color: $color-base;
+  display: flex;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__section {
+    z-index: 10;
+
+    &__nav {
+      &__phone {
+        padding: 0 2rem;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-logo {
+          height: 50%;
+
+        }
+
+        &-button {
+          background-color: transparent;
+          height: 5rem;
+          width: 5rem;
+          top: 0.5rem;
+          right: 2rem;
+          text-align: center;
+          cursor: pointer;
+        }
+
+        &-icon {
+          position: relative;
+          margin-top: 2rem;
+          width: 2rem;
+
+          &,
+          &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: gray;
+            display: inline-block;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 2rem;
+            transition: all 0.2s;
+          }
+
+          &::before {
+            top: -0.8rem;
+          }
+          &::after {
+            top: 0.8rem;
+          }
+        }
+      }
+    }
+
+    &__picture {
+      //position: absolute;
+      //top: 50%;
+      //left: 50%;
+      //transform: translate(-100%, -50%);
+      &__img-1 {
+        @include respond(phone) {
+          width: 100%;
+          height: 50%;
+        }
+        //width: 50vw;
+        //height: 40vh;
+        object-fit: cover;
+      }
+    }
+    &__text {
+      //margin-left: auto;
+      //width: 60%;
+      //height: 100%;
+      background-color: $color-level-1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @include respond(phone) {
+        padding: 6rem 5rem 6rem 5rem;
+      }
+
+      &__1 {
+        z-index: 15;
+
+        color: $color-text;
+
+        margin-bottom: 3rem;
+
+        @include respond(phone) {
+          font-size: 4rem;
+          line-height: 5rem;
+          font-weight: bold;
+        }
+
+        &-p {
+          color: $color-text;
+        }
+
+        &-span {
+          opacity: 0.5;
+        }
+      }
+
+      &__2 {
+        display: flex;
+        align-items: center;
+
+        color: $color-text;
+
+        &-p {
+          z-index: 15;
+          line-height: 2.7rem;
+          font-size: 18px;
+
+          @include respond(phone) {
+            line-height: 3rem;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+*/
 .hero {
   background-color: #000000;
-  display: flex;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .hero {
     flex-direction: column;
+    display: flex;
   }
 }
 .hero__section {
   z-index: 10;
+}
+@media only screen and (min-width: 56.25em) {
+  .hero__section {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+  }
 }
 .hero__section__nav__phone {
   padding: 0 2rem;
@@ -130,6 +286,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media only screen and (min-width: 56.25em) {
+  .hero__section__nav__phone {
+    display: none;
+  }
 }
 .hero__section__nav__phone-logo {
   height: 50%;
@@ -167,10 +328,28 @@ body {
 .hero__section__nav__phone-icon::after {
   top: 0.8rem;
 }
-.hero__section__picture__img-1 {
-  object-fit: cover;
+@media only screen and (min-width: 56.25em) {
+  .hero__section__picture {
+    height: 100vh;
+    grid-column: 1/6;
+    grid-row: 1/-1;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
-@media only screen and (max-width: 37.5em) {
+.hero__section__picture__img-1 {
+  z-index: 10;
+}
+@media only screen and (min-width: 56.25em) {
+  .hero__section__picture__img-1 {
+    grid-row: 2/6;
+    grid-column: 1/-1;
+    height: 100%;
+    width: 120%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .hero__section__picture__img-1 {
     width: 100%;
     height: 50%;
@@ -178,30 +357,51 @@ body {
 }
 .hero__section__text {
   background-color: #181823;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .hero__section__text {
+    grid-column: 6/-1;
+    grid-row: 1/-1;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .hero__section__text {
     padding: 6rem 5rem 6rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 .hero__section__text__1 {
   z-index: 15;
-  color: #FFFFFF;
   margin-bottom: 3rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .hero__section__text__1 {
     font-size: 4rem;
     line-height: 5rem;
     font-weight: bold;
   }
 }
+@media only screen and (min-width: 56.25em) {
+  .hero__section__text__1 {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+  }
+}
 .hero__section__text__1-p {
   color: #FFFFFF;
+}
+@media only screen and (min-width: 56.25em) {
+  .hero__section__text__1-p {
+    font-size: 7.6rem;
+    line-height: 9.1rem;
+  }
 }
 .hero__section__text__1-span {
   opacity: 0.5;
@@ -211,23 +411,199 @@ body {
   align-items: center;
   color: #FFFFFF;
 }
+@media only screen and (min-width: 56.25em) {
+  .hero__section__text__2 {
+    grid-column: 1/6;
+    grid-row: 4/5;
+  }
+}
 .hero__section__text__2-p {
   z-index: 15;
   line-height: 2.7rem;
   font-size: 18px;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .hero__section__text__2-p {
     line-height: 3rem;
     font-size: 18px;
   }
 }
 
+/*
+.work {
+  background-color: $color-base;
+  padding-bottom: 10rem;
+  @include respond(phone) {
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__text {
+    &-experience {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      height: 2.4rem;
+      color: $color-light-grey;
+      text-transform: uppercase;
+
+      @include respond(phone) {
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+    &-companies {
+      //width: 78rem;
+      //height: 13.2rem;
+      //left: 7.2rem;
+      //top: 15.2rem;
+      color: $color-text;
+      line-height: 6.61rem;
+
+      @include respond(phone) {
+        font-size: 4rem;
+        line-height: 4.2rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    &__1 {
+      @include respond(phone) {
+        padding-top: 2rem;
+      }
+
+      &-number {
+        color: $color-light-grey;
+      }
+
+      &__companies {
+        color: $color-text;
+        //width: 33.9rem;
+        //height: 2.9rem;
+
+        &-color1 {
+          color: $color-green-accent;
+        }
+
+        @include respond(phone) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-paragraph {
+        color: $color-light-grey;
+        width: 36.8rem;
+        height: 4.8rem;
+        top: 18.5rem;
+        line-height: 2.4rem;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    &__2 {
+      @include respond(phone) {
+        padding-top: 2rem;
+      }
+      &-number {
+        color: $color-dark-grey;
+      }
+
+      &__companies {
+        color: $color-text;
+        width: 33.9rem;
+        height: 2.9rem;
+        top: 14rem;
+
+        &-color2 {
+          color: $color-primary;
+        }
+
+        @include respond(phone) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+          margin-bottom: 5rem;
+        }
+      }
+
+      &-paragraph {
+        color: $color-light-grey;
+        width: 36.8rem;
+        height: 4.8rem;
+        top: 18.5rem;
+        line-height: 2.4rem;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    &__3 {
+      @include respond(phone) {
+        padding-top: 2rem;
+      }
+
+      &-number {
+        color: $color-dark-grey;
+      }
+
+      &__companies {
+        color: $color-text;
+        width: 33.9rem;
+        height: 2.9rem;
+        top: 14rem;
+
+        &-color3 {
+          color: $color-pink-accent;
+        }
+
+        @include respond(phone) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+          margin-bottom: 5rem;
+        }
+      }
+
+      &-paragraph {
+        color: $color-light-grey;
+        width: 36.8rem;
+        height: 4-8rem;
+        top: 18.5rem;
+        line-height: 2.4rem;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+*/
 .work {
   background-color: #000000;
-  padding-bottom: 10rem;
+  padding: 12rem 3rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work {
     padding: 8rem 2rem;
     display: flex;
@@ -241,7 +617,7 @@ body {
   color: #DEECF9;
   text-transform: uppercase;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__text-experience {
     font-size: 2rem;
     line-height: 3rem;
@@ -251,8 +627,9 @@ body {
 .work__text-companies {
   color: #FFFFFF;
   line-height: 6.61rem;
+  margin-bottom: 6rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__text-companies {
     font-size: 4rem;
     line-height: 4.2rem;
@@ -263,12 +640,12 @@ body {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card {
     flex-direction: column;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__1 {
     padding-top: 2rem;
   }
@@ -278,11 +655,12 @@ body {
 }
 .work__card__1__companies {
   color: #FFFFFF;
+  margin-bottom: 1rem;
 }
 .work__card__1__companies-color1 {
   color: #3CC74E;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__1__companies {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -296,14 +674,14 @@ body {
   top: 18.5rem;
   line-height: 2.4rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__1-paragraph {
     font-size: 2rem;
     line-height: 3rem;
     margin-bottom: 2rem;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__2 {
     padding-top: 2rem;
   }
@@ -313,14 +691,12 @@ body {
 }
 .work__card__2__companies {
   color: #FFFFFF;
-  width: 33.9rem;
-  height: 2.9rem;
-  top: 14rem;
+  margin-bottom: 1rem;
 }
 .work__card__2__companies-color2 {
   color: #5221E6;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__2__companies {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -334,14 +710,14 @@ body {
   top: 18.5rem;
   line-height: 2.4rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__2-paragraph {
     font-size: 2rem;
     line-height: 3rem;
     margin-bottom: 2rem;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__3 {
     padding-top: 2rem;
   }
@@ -351,14 +727,12 @@ body {
 }
 .work__card__3__companies {
   color: #FFFFFF;
-  width: 33.9rem;
-  height: 2.9rem;
-  top: 14rem;
+  margin-bottom: 1rem;
 }
 .work__card__3__companies-color3 {
   color: #E95D90;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__3__companies {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -372,7 +746,7 @@ body {
   top: 18.5rem;
   line-height: 2.4rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .work__card__3-paragraph {
     font-size: 2rem;
     line-height: 3rem;
@@ -380,28 +754,157 @@ body {
   }
 }
 
+/*
+.mid {
+
+  background-color: $color-base;
+  display: flex;
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__text {
+    background-color: $color-peach-accent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    @include respond(phone) {
+      padding: 3rem;
+    }
+
+    &__container {
+      &__div {
+
+        &-title {
+          @include respond(phone) {
+            line-height: 4.2rem;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            font-size: 4rem;
+            text-align: center;
+          }
+          //width: 52.9rem;
+          //height: 6.6rem;
+          //left: 7.2rem;
+          //top: 12rem;
+        }
+
+        &-paragraph {
+          @include respond(phone) {
+            line-height: 2.7rem;
+            font-size: 2.3rem;
+            padding-bottom: 8rem;
+          }
+          //width: 57.6rem;
+          //height: 10.8rem;
+          //left: 7.2rem;
+          //top: 21rem;
+
+          color: $color-base;
+        }
+      }
+
+      &-btn {
+        align-self: flex-start;
+        height: 2.4rem;
+        //left: 7.2rem;
+        //top: 41.5rem;
+        border: none;
+        color: $color-base;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 0.8rem;
+        cursor: pointer;
+        background-color: transparent;
+
+        @include respond(phone) {
+          line-height: 3rem;
+          font-size: 2rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  &__picture {
+    //width: 50%;
+    //width: 72rem;
+    //height: 60rem;
+    //left: 72rem;
+    //grid-column:  5 / span 4;
+
+    &__img {
+      height: 100%;
+      width: 100%;
+
+      @include respond(phone) {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // &__skilset{
+  //background-color: blue;
+  //}
+}
+*/
 .mid {
   background-color: #000000;
   display: flex;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .mid {
+    height: 60vh;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .mid {
     flex-direction: column;
   }
 }
 .mid__text {
+  /*
+      @include respond(tab-min) {
+        width: 50%;
+      }
+
+      background-color: $color-peach-accent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      @include respond(tab-port) {
+        padding: 9rem 3rem;
+      }
+  */
+}
+.mid__text__container {
   background-color: #FFF3E4;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  padding: 0 10rem;
 }
-@media only screen and (max-width: 37.5em) {
-  .mid__text {
-    padding: 3rem;
+@media only screen and (min-width: 56.25em) {
+  .mid__text__container {
+    width: 50%;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
+  .mid__text__container {
+    padding: 9rem 3rem;
+  }
+}
+.mid__text__container__div-title {
+  margin-bottom: 3rem;
+  line-height: 6.6rem;
+}
+@media only screen and (max-width: 56.25em) {
   .mid__text__container__div-title {
     line-height: 4.2rem;
     padding-bottom: 2rem;
@@ -411,9 +914,10 @@ body {
   }
 }
 .mid__text__container__div-paragraph {
+  line-height: 2.7rem;
   color: #000000;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .mid__text__container__div-paragraph {
     line-height: 2.7rem;
     font-size: 2.3rem;
@@ -429,33 +933,141 @@ body {
   padding-bottom: 0.8rem;
   cursor: pointer;
   background-color: transparent;
+  line-height: 2.7rem;
+  font-size: 1.6rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .mid__text__container-btn {
     line-height: 3rem;
     font-size: 2rem;
     height: 4rem;
   }
 }
+@media only screen and (min-width: 56.25em) {
+  .mid__picture {
+    width: 50%;
+  }
+}
 .mid__picture__img {
   height: 100%;
   width: 100%;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .mid__picture__img {
-    height: 100%;
+    height: 80%;
     width: 100%;
     object-fit: cover;
   }
 }
 
+/*
+.skilset {
+  background-color: $color-base;
+
+  padding: 5rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__text {
+    display: inline-block;
+    color: $color-text;
+
+    //width: 41.6rem;
+    height: 22.5rem;
+    margin-right: 2rem;
+
+    &__title {
+      width: 18.9rem;
+      height: 6.6rem;
+
+      @include respond(phone) {
+        font-size: 4rem;
+        line-height: 4.2rem;
+      }
+    }
+
+    &-paragraph {
+      line-height: 2.7rem;
+      //width: 36.8rem;
+      //height: 13.5rem;
+      color: $color-light-grey;
+
+      @include respond(phone) {
+        font-size: 2.1rem;
+        line-height: 2.7rem;
+      }
+    }
+  }
+
+  &__skils {
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    @include respond(phone) {
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+
+    &__card {
+      //width: 36.8rem;
+      //height: 16.9rem;
+      margin-bottom: 2rem;
+
+      @include respond(phone) {
+        margin-top: 4rem;
+      }
+
+      &-svg {
+        margin-bottom: 1rem;
+        width: 3.2rem;
+        height: 3.2rem;
+
+        @include respond(phone) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-title {
+        margin-bottom: 1rem;
+        //width: 17.7rem;
+        height: 2.9rem;
+        top: 5.6rem;
+        color: $color-text;
+        @include respond(phone) {
+          font-size: 3rem;
+          line-height: 2.8rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-paragraph {
+        width: 36.8rem;
+        height: 7.2rem;
+        top: 9.7rem;
+        color: $color-light-grey;
+        line-height: 2.4rem;
+
+        @include respond(phone) {
+          line-height: 3rem;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+*/
 .skilset {
   background-color: #000000;
-  padding: 5rem;
+  padding: 8rem;
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .skilset {
     flex-direction: column;
   }
@@ -466,11 +1078,17 @@ body {
   height: 22.5rem;
   margin-right: 2rem;
 }
+@media only screen and (min-width: 56.25em) {
+  .skilset__text {
+    max-width: 40rem;
+  }
+}
 .skilset__text__title {
   width: 18.9rem;
   height: 6.6rem;
+  margin-bottom: 2rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .skilset__text__title {
     font-size: 4rem;
     line-height: 4.2rem;
@@ -480,18 +1098,22 @@ body {
   line-height: 2.7rem;
   color: #DEECF9;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .skilset__text-paragraph {
     font-size: 2.1rem;
     line-height: 2.7rem;
   }
 }
 .skilset__skils {
-  margin-right: 2rem;
   display: flex;
   flex-direction: column;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .skilset__skils {
+    margin-right: 2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .skilset__skils {
     flex-direction: column;
     margin-top: 1rem;
@@ -500,7 +1122,12 @@ body {
 .skilset__skils__card {
   margin-bottom: 2rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .skilset__skils__card {
+    margin-bottom: 4rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .skilset__skils__card {
     margin-top: 4rem;
   }
@@ -510,7 +1137,7 @@ body {
   width: 3.2rem;
   height: 3.2rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .skilset__skils__card-svg {
     margin-bottom: 2rem;
   }
@@ -521,7 +1148,7 @@ body {
   top: 5.6rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .skilset__skils__card-title {
     font-size: 3rem;
     line-height: 2.8rem;
@@ -529,40 +1156,114 @@ body {
   }
 }
 .skilset__skils__card-paragraph {
-  width: 36.8rem;
+  max-width: 36.8rem;
   height: 7.2rem;
   top: 9.7rem;
   color: #DEECF9;
   line-height: 2.4rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .skilset__skils__card-paragraph {
     line-height: 3rem;
     font-size: 2rem;
   }
 }
 
+/*
+.logobar {
+  display: flex;
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__group{
+    &-1{
+        @include respond(phone) {
+           display: flex;    
+          }
+    }
+    &-2{
+        @include respond(phone) {
+           display: flex;    
+          }
+    }
+    &-3{
+        @include respond(phone) {
+           display: flex;    
+          }
+    }
+
+
+
+}
+
+  &__icon {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-base;
+    width: 100%;
+    height: 20rem;
+    //left: 34rem;
+
+    border: 1px solid #181823;
+    box-sizing: border-box;
+  }
+}
+*/
 .logobar {
   display: flex;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .logobar {
     flex-direction: column;
   }
 }
-@media only screen and (max-width: 37.5em) {
+.logobar__total-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  width: 100%;
+  height: 20rem;
+  border: 1px solid #181823;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 56.25em) {
+  .logobar__total-icon {
+    display: none;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .logobar__group-1 {
     display: flex;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .logobar__group-1 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .logobar__group-2 {
     display: flex;
   }
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .logobar__group-2 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .logobar__group-3 {
     display: flex;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .logobar__group-3 {
+    display: none;
   }
 }
 .logobar__icon {
@@ -576,11 +1277,236 @@ body {
   box-sizing: border-box;
 }
 
+/*
+.project {
+  background-color: $color-base;
+  padding-top: 10rem;
+
+  @include respond(phone) {
+    padding: 10rem 2.5rem;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+
+      &__text {
+        &-title {
+          color: #8491a0;
+          line-height: 2.4rem;
+          text-transform: uppercase;
+          @include respond(phone) {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            line-height: 3rem;
+          }
+          //width: 10.6rem;
+          //height: 2.4rem;
+        }
+
+        &-p {
+          //width: 58.8rem;
+          //height: 13.2rem;
+          color: $color-text;
+          line-height: 6.6rem;
+
+          @include respond(phone) {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 4.5rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+          }
+        }
+      }
+
+      &__card1 {
+          margin-top: 3rem;
+        &-img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &__container {
+          background-color: $color-level-1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 4rem 3.2rem;
+
+          &-title {
+            color: $color-text;
+            line-height: 2.7rem;
+            @include respond(phone) {
+              font-size: 3rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+
+          &-p1 {
+            color: $color-light-grey;
+
+            @include respond(phone) {
+              font-size: 2.2rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+
+          &-png {
+            align-self: flex-end;
+          }
+        }
+      }
+
+      &__card2 {
+        margin-top: 3rem;
+        &-img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &__container {
+          background-color: $color-level-1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 4rem 3.2rem;
+
+          &-title {
+            color: $color-text;
+            line-height: 2.7rem;
+            @include respond(phone) {
+              font-size: 3rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+
+          &-p2 {
+            color: $color-light-grey;
+
+            @include respond(phone) {
+              font-size: 2.2rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__card1 {
+        margin-top: 3rem;
+        &-img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &__container {
+          background-color: $color-level-1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 4rem 3.2rem;
+
+          &-title {
+            color: $color-text;
+            line-height: 2.7rem;
+            @include respond(phone) {
+              font-size: 3rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+
+          &-p1 {
+            color: $color-light-grey;
+
+            @include respond(phone) {
+              font-size: 2.2rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+        }
+      }
+
+      &__card2 {
+        margin-top: 3rem;
+        &-img {
+          width: 100%;
+          height: 100%;
+        }
+        &__container {
+          background-color: $color-level-1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 4rem 3.2rem;
+
+          &-title {
+            color: $color-text;
+            line-height: 2.7rem;
+            @include respond(phone) {
+              font-size: 3rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+
+          &-p2 {
+            color: $color-light-grey;
+
+            @include respond(phone) {
+              font-size: 2.2rem;
+              line-height: 3.4rem;
+              margin-bottom: 2rem;
+            }
+          }
+        }
+      }
+      &-btn {
+
+        @include respond(phone) {
+            display: none;
+          }
+        background-color: $color-base;
+        color: $color-text;
+        //width: 24.7rem;
+        height: 7.5rem;
+        left: 92.7rem;
+        top: 188.3rem;
+
+        border: 1px solid #5221e6;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+*/
 .project {
   background-color: #000000;
   padding-top: 10rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .project {
+    padding: 10rem 3rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .project {
     padding: 10rem 2.5rem;
   }
@@ -589,7 +1515,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .project__container {
     flex-direction: column;
   }
@@ -598,12 +1524,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (min-width: 56.25em) {
+  .project__container__left {
+    padding: 3rem;
+  }
+}
 .project__container__left__text-title {
   color: #8491a0;
   line-height: 2.4rem;
   text-transform: uppercase;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .project__container__left__text-title {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -614,7 +1545,12 @@ body {
   color: #FFFFFF;
   line-height: 6.6rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .project__container__left__text-p {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .project__container__left__text-p {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -628,7 +1564,7 @@ body {
 }
 .project__container__left__card1-img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .project__container__left__card1__container {
   background-color: #181823;
@@ -639,9 +1575,14 @@ body {
 }
 .project__container__left__card1__container-title {
   color: #FFFFFF;
-  line-height: 2.7rem;
+  line-height: 2.8rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .project__container__left__card1__container-title {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .project__container__left__card1__container-title {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -649,24 +1590,36 @@ body {
   }
 }
 .project__container__left__card1__container-p1 {
-  color: #DEECF9;
+  color: #8491a0;
+  line-height: 2.7rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .project__container__left__card1__container-p1 {
     font-size: 2.2rem;
     line-height: 3.4rem;
     margin-bottom: 2rem;
   }
 }
-.project__container__left__card1__container-png {
+.project__container__left__card1__container__png {
+  height: 4.8rem;
+  width: 4.8rem;
   align-self: flex-end;
+  background-color: #5221e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project__container__left__card1__container__png-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: #FFFFFF;
 }
 .project__container__left__card2 {
   margin-top: 3rem;
 }
 .project__container__left__card2-img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .project__container__left__card2__container {
   background-color: #181823;
@@ -677,9 +1630,14 @@ body {
 }
 .project__container__left__card2__container-title {
   color: #FFFFFF;
-  line-height: 2.7rem;
+  line-height: 2.8rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .project__container__left__card2__container-title {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .project__container__left__card2__container-title {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -687,9 +1645,10 @@ body {
   }
 }
 .project__container__left__card2__container-p2 {
-  color: #DEECF9;
+  color: #8491a0;
+  line-height: 2.7rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .project__container__left__card2__container-p2 {
     font-size: 2.2rem;
     line-height: 3.4rem;
@@ -701,12 +1660,17 @@ body {
   flex-direction: column;
   align-items: center;
 }
+@media only screen and (min-width: 56.25em) {
+  .project__container__right {
+    padding: 3rem;
+  }
+}
 .project__container__right__card1 {
   margin-top: 3rem;
 }
 .project__container__right__card1-img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .project__container__right__card1__container {
   background-color: #181823;
@@ -717,9 +1681,14 @@ body {
 }
 .project__container__right__card1__container-title {
   color: #FFFFFF;
-  line-height: 2.7rem;
+  line-height: 2.8rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .project__container__right__card1__container-title {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .project__container__right__card1__container-title {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -727,9 +1696,10 @@ body {
   }
 }
 .project__container__right__card1__container-p1 {
-  color: #DEECF9;
+  color: #8491a0;
+  line-height: 2.7rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .project__container__right__card1__container-p1 {
     font-size: 2.2rem;
     line-height: 3.4rem;
@@ -741,7 +1711,7 @@ body {
 }
 .project__container__right__card2-img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .project__container__right__card2__container {
   background-color: #181823;
@@ -752,9 +1722,14 @@ body {
 }
 .project__container__right__card2__container-title {
   color: #FFFFFF;
-  line-height: 2.7rem;
+  line-height: 2.8rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .project__container__right__card2__container-title {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .project__container__right__card2__container-title {
     font-size: 3rem;
     line-height: 3.4rem;
@@ -762,9 +1737,10 @@ body {
   }
 }
 .project__container__right__card2__container-p2 {
-  color: #DEECF9;
+  color: #8491a0;
+  line-height: 2.7rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .project__container__right__card2__container-p2 {
     font-size: 2.2rem;
     line-height: 3.4rem;
@@ -774,34 +1750,130 @@ body {
 .project__container__right-btn {
   background-color: #000000;
   color: #FFFFFF;
-  height: 7.5rem;
-  left: 92.7rem;
-  top: 188.3rem;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-top: 4rem;
+  padding: 3rem;
   border: 1px solid #5221e6;
   box-sizing: border-box;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .project__container__right-btn {
     display: none;
   }
 }
 
+/*
+.insta {
+  display: flex;
+  background-color: $color-base;
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__container {
+    display: flex;
+    background-color: $color-peach-accent;
+
+
+    @include respond(phone) {
+        padding: 5rem 2.5rem;
+      }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      &__1 {
+        &-title {
+          color: $color-level-1;
+          align-self: flex-start;
+          //width: 28.5rem;
+          //height: 6.6rem;
+          line-height: 6.6rem;
+          margin-bottom: 3rem;
+
+          @include respond(phone) {
+            font-size: 4rem;
+            line-height: 4.2rem;
+          }
+        }
+
+        &-paragraph {
+          //padding-right: 12rem;
+          //width: 63.6rem;
+          //height: 8.1rem;
+          //left: 7.2rem;
+          line-height: 2.7rem;
+          color: #5b6876;
+
+          @include respond(phone) {
+            font-size: 2.4rem;
+            line-height: 3.2rem;
+            margin-bottom: 8rem;
+            padding-right: 6rem ;
+          }
+        }
+      }
+
+      &-btn {
+        align-self: flex-start;
+        height: 2.4rem;
+        border: none;
+        color: $color-base;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 0.8rem;
+        cursor: pointer;
+        background-color: transparent;
+        line-height: 2.4rem;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          height: 3.5rem;
+          line-height: 3rem;
+        }
+      }
+    }
+  }
+
+  &__picture {
+
+    &__img {
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+}
+*/
 .insta {
   display: flex;
   background-color: #000000;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .insta {
+    height: 80vh;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .insta {
     flex-direction: column;
   }
 }
 .insta__container {
   display: flex;
-  background-color: #FFF3E4;
+  background-color: #FBE4FF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
   .insta__container {
-    padding: 5rem 2.5rem;
+    width: 55%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .insta__container {
+    padding: 10rem 2.5rem;
   }
 }
 .insta__container__text {
@@ -810,13 +1882,18 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+@media only screen and (min-width: 56.25em) {
+  .insta__container__text {
+    padding: 0 10rem;
+  }
+}
 .insta__container__text__1-title {
   color: #181823;
   align-self: flex-start;
   line-height: 6.6rem;
   margin-bottom: 3rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .insta__container__text__1-title {
     font-size: 4rem;
     line-height: 4.2rem;
@@ -826,7 +1903,7 @@ body {
   line-height: 2.7rem;
   color: #5b6876;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .insta__container__text__1-paragraph {
     font-size: 2.4rem;
     line-height: 3.2rem;
@@ -845,11 +1922,16 @@ body {
   background-color: transparent;
   line-height: 2.4rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .insta__container__text-btn {
     font-size: 2rem;
     height: 3.5rem;
     line-height: 3rem;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .insta__picture {
+    width: 50%;
   }
 }
 .insta__picture__img {
@@ -857,13 +1939,122 @@ body {
   height: 100%;
 }
 
+/*
+.dribbble {
+  background-color: $color-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @include respond(phone) {
+    padding: 8rem 3rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //width: 63.6rem;
+    //height: 21.3rem;
+    @include respond(phone) {
+        margin-bottom: 6rem;
+      }
+
+    &-title {
+      display: inline-block;
+      //width: 32.5rem;
+      //height: 6.6rem;
+
+      line-height: 6.6rem;
+      color: $color-text;
+      @include respond(phone) {
+        font-size: 4rem;
+        line-height: 4.2rem;
+        margin-bottom: 4rem;
+      }
+
+    }
+    &-paragraph {
+      //width: 63.6rem;
+      //height: 5.4rem;
+
+      line-height: 2.7rem;
+      color: #8491a0;
+      @include respond(phone) {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        margin-bottom: 6rem;
+      }
+
+    }
+
+    &-btn {
+      align-self: start;
+      color: $color-text;
+      line-height: 2.4rem;
+      font-size: 16px;
+
+      height: 2.4rem;
+      border: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1rem;
+      cursor: pointer;
+      background-color: transparent;
+
+      @include respond(phone) {
+        font-size: 2rem;
+        line-height: 3rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  &__img {
+    border-radius: 0.8rem;
+    height: 100%;
+
+    @include respond(phone) {
+      position: relative;
+    }
+
+    &__nav {
+      @include respond(phone) {
+        width: 100%;
+        height: 5rem;
+        position: absolute;
+        background-color: $color-level-1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      &-link {
+          margin-left: 1rem ;
+        @include respond(phone) {
+          width: 100%;
+          border-radius: 50%;
+          height: 2rem;
+          width: 2rem;
+          background-color: #8491a0;
+        }
+      }
+    }
+
+    &-p {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+*/
 .dribbble {
   background-color: #000000;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding: 20rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .dribbble {
     padding: 8rem 3rem;
   }
@@ -873,7 +2064,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .dribbble__container {
     margin-bottom: 6rem;
   }
@@ -883,7 +2074,12 @@ body {
   line-height: 6.6rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .dribbble__container-title {
+    margin-bottom: 3.5rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .dribbble__container-title {
     font-size: 4rem;
     line-height: 4.2rem;
@@ -894,7 +2090,12 @@ body {
   line-height: 2.7rem;
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .dribbble__container-paragraph {
+    margin-bottom: 3.5rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .dribbble__container-paragraph {
     font-size: 2.2rem;
     line-height: 3.2rem;
@@ -913,7 +2114,12 @@ body {
   cursor: pointer;
   background-color: transparent;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .dribbble__container-btn {
+    margin-bottom: 10rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .dribbble__container-btn {
     font-size: 2rem;
     line-height: 3rem;
@@ -921,15 +2127,25 @@ body {
   }
 }
 .dribbble__img {
-  border-radius: 0.8rem;
   height: 100%;
+  position: relative;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .dribbble__img {
     position: relative;
+    border-radius: 0.8rem;
   }
 }
-@media only screen and (max-width: 37.5em) {
+.dribbble__img__nav {
+  width: 100%;
+  height: 5rem;
+  position: absolute;
+  background-color: #181823;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media only screen and (max-width: 56.25em) {
   .dribbble__img__nav {
     width: 100%;
     height: 5rem;
@@ -942,8 +2158,13 @@ body {
 }
 .dribbble__img__nav-link {
   margin-left: 1rem;
+  width: 100%;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  background-color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .dribbble__img__nav-link {
     width: 100%;
     border-radius: 50%;
@@ -953,19 +2174,253 @@ body {
   }
 }
 .dribbble__img-p {
+  border-radius: 0.8rem;
   height: 100%;
   width: 100%;
 }
 
+/*
+.sticky {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-base;
+
+  @include respond(phone) {
+    flex-direction: column;
+    padding: 3rem 3rem;
+  }
+
+  &__text {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include respond(phone) {
+        margin-bottom: 6rem;
+      }
+
+      &-title {
+        //width: 59.6rem;
+        //height: 13.2rem;
+        line-height: 6.6rem;
+        color: $color-text;
+
+        @include respond(phone) {
+          font-size: 4rem;
+          line-height: 4.2rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      &-paragraph {
+        //width: 59.6rem;
+        //height: 5.4rem;
+        line-height: 27px;
+        color: #8491a0;
+
+        @include respond(phone) {
+          font-size: 2.2rem;
+          line-height: 3.2rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      &-btn {
+        align-self: start;
+        height: 2.4rem;
+        font-size: 16px;
+        color: $color-text;
+        line-height: 2.4rem;
+        border: none;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 1rem;
+        cursor: pointer;
+        background-color: transparent;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 3rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &__container1 {
+      margin-bottom: 12rem;
+      border: 1px solid #5b6876;
+      &-img {
+        height: 100%;
+        width: 100%;
+      }
+
+      &__text {
+        padding: 5rem;
+        &-paragraph {
+          //width: 50.8rem;
+          //height: 14.5rem;
+          line-height: 2.9rem;
+          color: $color-text;
+          @include respond(phone) {
+            font-size: 2.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 6rem;
+          }
+        }
+
+        &__box {
+          &-name {
+            //width: 12.9rem;
+            //height: 2.7rem;
+            color: #8491a0;
+            line-height: 2.7rem;
+
+            @include respond(phone) {
+              font-size: 2.2rem;
+              line-height: 3.3rem;
+            }
+          }
+
+          &-company {
+            color: #8491a0;
+            //width: 12.8rem;
+            //height: 2.4rem;
+
+            @include respond(phone) {
+              font-size: 2rem;
+              line-height: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__container2 {
+      margin-bottom: 12rem;
+      border: 1px solid #5b6876;
+      &-img {
+        height: 100%;
+        width: 100%;
+      }
+
+      &__text {
+        padding: 5rem;
+        &-paragraph {
+          //width: 50.8rem;
+          //height: 14.5rem;
+          line-height: 2.9rem;
+          color: $color-text;
+
+          @include respond(phone) {
+            font-size: 2.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 6rem;
+          }
+        }
+
+        &__box {
+          &-name {
+            //width: 12.9rem;
+            //height: 2.7rem;
+            color: #8491a0;
+            line-height: 2.7rem;
+
+            @include respond(phone) {
+              font-size: 2.2rem;
+              line-height: 3.3rem;
+            }
+          }
+
+          &-company {
+            color: #8491a0;
+            //width: 12.8rem;
+            //height: 2.4rem;
+
+            @include respond(phone) {
+              font-size: 2rem;
+              line-height: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__container3 {
+      margin-bottom: 12rem;
+      border: 1px solid #5b6876;
+      &-img {
+        height: 100%;
+        width: 100%;
+      }
+
+      &__text {
+        padding: 5rem;
+        &-paragraph {
+          //width: 50.8rem;
+          //height: 14.5rem;
+          line-height: 2.9rem;
+          color: $color-text;
+
+          @include respond(phone) {
+            font-size: 2.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 6rem;
+          }
+        }
+
+        &__box {
+          &-name {
+            //width: 12.9rem;
+            //height: 2.7rem;
+            color: #8491a0;
+            line-height: 2.7rem;
+
+            @include respond(phone) {
+              font-size: 2.2rem;
+              line-height: 3.3rem;
+            }
+          }
+
+          &-company {
+            color: #8491a0;
+            //width: 12.8rem;
+            //height: 2.4rem;
+
+            @include respond(phone) {
+              font-size: 2rem;
+              line-height: 3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/
 .sticky {
   display: flex;
   justify-content: space-between;
   background-color: #000000;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .sticky {
+    padding: 6rem 5rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .sticky {
     flex-direction: column;
     padding: 3rem 3rem;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .sticky__text {
+    width: 50%;
   }
 }
 .sticky__text__container {
@@ -973,8 +2428,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__text__container {
+    padding-top: 6rem;
     margin-bottom: 6rem;
   }
 }
@@ -982,7 +2438,12 @@ body {
   line-height: 6.6rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .sticky__text__container-title {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .sticky__text__container-title {
     font-size: 4rem;
     line-height: 4.2rem;
@@ -990,10 +2451,15 @@ body {
   }
 }
 .sticky__text__container-paragraph {
-  line-height: 27px;
+  line-height: 2.7rem;
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .sticky__text__container-paragraph {
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .sticky__text__container-paragraph {
     font-size: 2.2rem;
     line-height: 3.2rem;
@@ -1012,7 +2478,7 @@ body {
   cursor: pointer;
   background-color: transparent;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__text__container-btn {
     font-size: 2rem;
     line-height: 3rem;
@@ -1023,12 +2489,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (min-width: 56.25em) {
+  .sticky__card {
+    width: 50%;
+  }
+}
 .sticky__card__container1 {
   margin-bottom: 12rem;
   border: 1px solid #5b6876;
 }
 .sticky__card__container1-img {
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 .sticky__card__container1__text {
@@ -1038,7 +2509,12 @@ body {
   line-height: 2.9rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .sticky__card__container1__text-paragraph {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container1__text-paragraph {
     font-size: 2.2rem;
     line-height: 3.2rem;
@@ -1049,7 +2525,7 @@ body {
   color: #8491a0;
   line-height: 2.7rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container1__text__box-name {
     font-size: 2.2rem;
     line-height: 3.3rem;
@@ -1058,7 +2534,7 @@ body {
 .sticky__card__container1__text__box-company {
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container1__text__box-company {
     font-size: 2rem;
     line-height: 3rem;
@@ -1069,7 +2545,7 @@ body {
   border: 1px solid #5b6876;
 }
 .sticky__card__container2-img {
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 .sticky__card__container2__text {
@@ -1079,7 +2555,12 @@ body {
   line-height: 2.9rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .sticky__card__container2__text-paragraph {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container2__text-paragraph {
     font-size: 2.2rem;
     line-height: 3.2rem;
@@ -1090,7 +2571,7 @@ body {
   color: #8491a0;
   line-height: 2.7rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container2__text__box-name {
     font-size: 2.2rem;
     line-height: 3.3rem;
@@ -1099,7 +2580,7 @@ body {
 .sticky__card__container2__text__box-company {
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container2__text__box-company {
     font-size: 2rem;
     line-height: 3rem;
@@ -1110,7 +2591,7 @@ body {
   border: 1px solid #5b6876;
 }
 .sticky__card__container3-img {
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 .sticky__card__container3__text {
@@ -1120,7 +2601,12 @@ body {
   line-height: 2.9rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .sticky__card__container3__text-paragraph {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container3__text-paragraph {
     font-size: 2.2rem;
     line-height: 3.2rem;
@@ -1131,7 +2617,7 @@ body {
   color: #8491a0;
   line-height: 2.7rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container3__text__box-name {
     font-size: 2.2rem;
     line-height: 3.3rem;
@@ -1140,17 +2626,163 @@ body {
 .sticky__card__container3__text__box-company {
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .sticky__card__container3__text__box-company {
     font-size: 2rem;
     line-height: 3rem;
   }
 }
 
+/*
+.photography {
+  background-color: $color-base;
+
+  @include respond(phone) {
+    padding: 6rem 2rem;
+  }
+
+  &__text {
+    &-title {
+      //width: 34.9rem;
+      //height: 6.6rem;
+      margin-bottom: 4rem;
+      line-height: 6.6rem;
+      color: $color-text;
+
+      @include respond(phone) {
+        font-size: 4rem;
+        line-height: 4.5rem;
+      }
+    }
+
+    &-paragraph {
+      //width: 63.6rem;
+      //height: 5.4rem;
+      margin-bottom: 3.5rem;
+      line-height: 2.7rem;
+      color: #8491a0;
+
+      @include respond(phone) {
+        font-size: 2.4rem;
+        line-height: 3.3rem;
+      }
+    }
+  }
+
+  &__list {
+    @include respond(phone) {
+      display: none;
+    }
+
+    display: flex;
+    margin-bottom: 3.5rem;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      margin-right: 6rem;
+      width: auto;
+      height: 5.1rem;
+      border: 1px solid #5221e6;
+      list-style: none;
+      text-transform: uppercase;
+
+      &--active {
+        background-color: #5221e6;
+      }
+
+    }
+
+    &-link {
+      padding: 0 1rem 0 1rem;
+      color: $color-text;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  @include respond(phone) {
+    &__phonelist {
+      display: flex;
+      justify-content: space-between;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+        width: 15rem;
+        height: 5.1rem;
+        border: 1px solid #5221e6;
+        list-style: none;
+        text-transform: uppercase;
+
+        &--active {
+          background-color: #5221e6;
+        }
+      }
+
+      &-link {
+
+        padding: 0 1rem 0 1rem;
+        color: $color-text;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    &-1 {
+      width: 100%;
+      height: 100%;
+    }
+
+    &-2 {
+      @include respond(phone) {
+        display: none;
+      }
+
+      width: 100%;
+      height: 100%;
+    }
+
+    &-3 {
+      @include respond(phone) {
+        display: none;
+      }
+
+      width: 100%;
+      height: 100%;
+    }
+
+    &-4 {
+      @include respond(phone) {
+        display: none;
+      }
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+*/
 .photography {
   background-color: #000000;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .photography {
+    padding: 8rem 5rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .photography {
     padding: 6rem 2rem;
   }
@@ -1160,7 +2792,7 @@ body {
   line-height: 6.6rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .photography__text-title {
     font-size: 4rem;
     line-height: 4.5rem;
@@ -1171,7 +2803,7 @@ body {
   line-height: 2.7rem;
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .photography__text-paragraph {
     font-size: 2.4rem;
     line-height: 3.3rem;
@@ -1181,7 +2813,7 @@ body {
   display: flex;
   margin-bottom: 3.5rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .photography__list {
     display: none;
   }
@@ -1205,10 +2837,15 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .photography__phonelist {
+    display: none;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .photography__phonelist {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .photography__phonelist__item {
     display: flex;
@@ -1235,48 +2872,193 @@ body {
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .photography__img {
     flex-direction: column;
   }
 }
-.photography__img-1 {
+.photography__img__1 {
   width: 100%;
-  height: 100%;
+  height: 40rem;
+  background-image: url(../img/img-11.jfif);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 56.25em) {
+  .photography__img__1 {
+    background-size: cover;
+  }
+}
+.photography__img__2 {
+  width: 100%;
+  height: 40rem;
+  background-image: url(../img/img-12.jfif);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 56.25em) {
+  .photography__img__2 {
+    display: none;
+  }
+}
+.photography__img__3 {
+  width: 100%;
+  height: 40rem;
+  background-image: url(../img/img-13.jfif);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 56.25em) {
+  .photography__img__3 {
+    display: none;
+  }
+}
+.photography__img__4 {
+  width: 100%;
+  height: 40rem;
+  background-image: url(../img/img-14.jfif);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media only screen and (max-width: 56.25em) {
+  .photography__img__4 {
+    display: none;
+  }
 }
 .photography__img-2 {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .photography__img-2 {
     display: none;
   }
 }
 .photography__img-3 {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .photography__img-3 {
     display: none;
   }
 }
 .photography__img-4 {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .photography__img-4 {
     display: none;
   }
 }
 
+/*
 .business {
   padding-top: 15rem;
+  background-color: $color-base;
+
+  @include respond(phone) {
+    padding: 6rem 2rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    &__text {
+      &-title {
+        //width: 52.6rem;
+        //height: 6.6rem;
+        line-height: 6.6rem;
+        color: $color-text;
+
+        @include respond(phone) {
+          font-size: 4rem;
+          line-height: 4.2rem;
+          margin-bottom: 3rem;
+        }
+      }
+
+      &-paragraph {
+        //width: 52.6rem;
+        //height: 5.4rem;
+        line-height: 2.7rem;
+        color: #8491a0;
+
+        @include respond(phone) {
+          font-size: 2.3rem;
+          line-height: 3.5rem;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+
+      &-label {
+        //width: 6.4re;
+        //height: 2.4rem;
+        color: $color-text;
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+      }
+
+      &-input {
+        //width: 52.6rem;
+        //height: 5rem;
+        background-color: $color-level-1;
+        border: none;
+        @include respond(phone) {
+          height: 6.5rem;
+        }
+      }
+
+      &-message {
+        //width: 52.6rem;
+        //height: 10rem;
+        background-color: $color-level-1;
+        border: none;
+
+        @include respond(phone) {
+          height: 12rem;
+        }
+      }
+
+      &-btn {
+        //width: 52.5rem;
+        height: 7.5rem;
+        padding: 2.4rem 3.3rem;
+        color: $color-text;
+        background-color: #5221e6;
+        border: none;
+
+        @include respond(phone) {
+          font-size: 2.2rem;
+          line-height: 3.5rem;
+          height: 9rem;
+        }
+      }
+    }
+  }
+}
+*/
+.business {
+  padding: 15rem;
   background-color: #000000;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business {
     padding: 6rem 2rem;
   }
@@ -1285,16 +3067,23 @@ body {
   display: flex;
   justify-content: space-around;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business__container {
     flex-direction: column;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .business__container__text {
+    justify-content: flex-end;
+    width: 50%;
   }
 }
 .business__container__text-title {
   line-height: 6.6rem;
   color: #FFFFFF;
+  margin-bottom: 2rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business__container__text-title {
     font-size: 4rem;
     line-height: 4.2rem;
@@ -1305,7 +3094,7 @@ body {
   line-height: 2.7rem;
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business__container__text-paragraph {
     font-size: 2.3rem;
     line-height: 3.5rem;
@@ -1318,10 +3107,17 @@ body {
   justify-content: space-between;
   margin-bottom: 4rem;
 }
+@media only screen and (min-width: 56.25em) {
+  .business__container__form {
+    width: 50%;
+    align-self: center;
+  }
+}
 .business__container__form-label {
+  line-height: 2.4rem;
   color: #FFFFFF;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business__container__form-label {
     font-size: 2rem;
     line-height: 3rem;
@@ -1331,18 +3127,28 @@ body {
   background-color: #181823;
   border: none;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business__container__form-input {
     height: 6.5rem;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .business__container__form-input {
+    height: 5rem;
   }
 }
 .business__container__form-message {
   background-color: #181823;
   border: none;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business__container__form-message {
     height: 12rem;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .business__container__form-message {
+    height: 10rem;
   }
 }
 .business__container__form-btn {
@@ -1352,7 +3158,7 @@ body {
   background-color: #5221e6;
   border: none;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .business__container__form-btn {
     font-size: 2.2rem;
     line-height: 3.5rem;
@@ -1360,13 +3166,98 @@ body {
   }
 }
 
+/*
+.footer {
+  padding: 4rem 12rem 4rem 4rem;
+  background-color: $color-level-1;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__container {
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 3rem;
+      @include respond(phone) {
+        margin-bottom: 3rem;
+      }
+
+      &__img {
+        &-logo {
+          height: 4rem;
+          width: 13rem;
+        }
+
+        &__social {
+          margin-top: 2rem;
+          &-logo {
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      padding-top: 3rem;
+
+      @include respond(phone) {
+        justify-content: space-between;
+        margin-bottom: 3rem;
+      }
+
+      &__list {
+        list-style: none;
+
+        &-item {
+          //width: 19.6rem;
+          height: 4.8rem;
+        }
+
+        &-link {
+          text-decoration: none;
+          color: $color-text;
+          cursor: pointer;
+
+          @include respond(phone) {
+            font-size: 2rem;
+            line-height: 3rem;
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    &-paragraph {
+      //width: 42.6rem;
+
+      color: #8491a0;
+      @include respond(phone) {
+        width: 80vw;
+        font-size: 2rem;
+        line-height: 3rem;
+      }
+    }
+  }
+}
+*/
 .footer {
   padding: 4rem 12rem 4rem 4rem;
   background-color: #181823;
   display: flex;
   justify-content: space-between;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .footer {
     flex-direction: column;
   }
@@ -1377,9 +3268,14 @@ body {
   justify-content: space-between;
   padding-top: 3rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .footer__container__left {
     margin-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .footer__container__left {
+    width: 50%;
   }
 }
 .footer__container__left__img-logo {
@@ -1396,14 +3292,25 @@ body {
 .footer__container__left__img__social-logo:not(:last-child) {
   margin-right: 1rem;
 }
+.footer__container__left__text-paragraph {
+  color: #8491a0;
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
 .footer__container__right {
   display: flex;
   padding-top: 3rem;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .footer__container__right {
     justify-content: space-between;
     margin-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 56.25em) {
+  .footer__container__right {
+    width: 50%;
+    justify-content: space-evenly;
   }
 }
 .footer__container__right__list {
@@ -1417,7 +3324,7 @@ body {
   color: #FFFFFF;
   cursor: pointer;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 56.25em) {
   .footer__container__right__list-link {
     font-size: 2rem;
     line-height: 3rem;
@@ -1426,7 +3333,12 @@ body {
 .footer__text-paragraph {
   color: #8491a0;
 }
-@media only screen and (max-width: 37.5em) {
+@media only screen and (min-width: 56.25em) {
+  .footer__text-paragraph {
+    display: none;
+  }
+}
+@media only screen and (max-width: 56.25em) {
   .footer__text-paragraph {
     width: 80vw;
     font-size: 2rem;

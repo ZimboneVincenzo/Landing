@@ -1,3 +1,4 @@
+/*
 .hero {
   background-color: $color-base;
   display: flex;
@@ -126,6 +127,199 @@
           font-size: 18px;
 
           @include respond(phone) {
+            line-height: 3rem;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+*/
+
+.hero {
+  background-color: $color-base;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    display: flex;
+  }
+
+  &__section {
+    @include respond(tab-min) {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    z-index: 10;
+
+    &__nav {
+      &__phone {
+        @include respond(tab-min) {
+          display: none;
+        }
+
+        padding: 0 2rem;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-logo {
+          height: 50%;
+        }
+
+        &-button {
+          background-color: transparent;
+          height: 5rem;
+          width: 5rem;
+          top: 0.5rem;
+          right: 2rem;
+          text-align: center;
+          cursor: pointer;
+        }
+
+        &-icon {
+          position: relative;
+          margin-top: 2rem;
+          width: 2rem;
+
+          &,
+          &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: gray;
+            display: inline-block;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 2rem;
+            transition: all 0.2s;
+          }
+
+          &::before {
+            top: -0.8rem;
+          }
+          &::after {
+            top: 0.8rem;
+          }
+        }
+      }
+    }
+
+    &__picture {
+      @include respond(tab-min) {
+        height: 100vh;
+        grid-column: 1 / 6;
+        grid-row: 1 / -1;
+        //background-color: $color-base;
+
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      //position: absolute;
+      //top: 50%;
+      //left: 50%;
+      //transform: translate(-100%, -50%);
+      &__img-1 {
+        @include respond(tab-min) {
+          grid-row: 2 / 6;
+          grid-column: 1 / -1;
+
+          height: 100%;
+          width: 120%;
+        }
+
+        //object-fit: cover;
+        z-index: 10;
+
+        @include respond(tab-port) {
+          width: 100%;
+          height: 50%;
+        }
+      }
+    }
+    &__text {
+      @include respond(tab-min) {
+        grid-column: 6 / -1;
+        grid-row: 1 / -1;
+        height: 100vh;
+
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+      }
+      //margin-left: auto;
+      //width: 60%;
+      //height: 100%;
+      background-color: $color-level-1;
+      //display: flex;
+      //flex-direction: column;
+      //justify-content: center;
+      //align-items: center;
+
+      @include respond(tab-port) {
+        padding: 6rem 5rem 6rem 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__1 {
+        z-index: 15;
+
+        margin-bottom: 3rem;
+
+        @include respond(tab-port) {
+          font-size: 4rem;
+          line-height: 5rem;
+          font-weight: bold;
+        }
+
+        @include respond(tab-min){
+          grid-column: 1 / -1;
+          grid-row: 3 / 4 ;
+        }
+
+        &-p {
+          @include respond(tab-min){
+            font-size: 7.6rem;
+            line-height: 9.1rem;
+          }
+         
+          color: $color-text;
+        }
+
+        &-span {
+          opacity: 0.5;
+        }
+      }
+
+      &__2 {
+
+        @include respond(tab-min){
+          grid-column: 1 / 6;
+          grid-row: 4 / 5 ;
+        }
+
+        display: flex;
+        align-items: center;
+
+        color: $color-text;
+
+        &-p {
+          z-index: 15;
+          line-height: 2.7rem;
+          font-size: 18px;
+
+          @include respond(tab-port) {
             line-height: 3rem;
             font-size: 18px;
           }

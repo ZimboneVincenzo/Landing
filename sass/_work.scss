@@ -1,3 +1,4 @@
+/*
 .work {
   background-color: $color-base;
   padding-bottom: 10rem;
@@ -158,6 +159,176 @@
         line-height: 2.4rem;
 
         @include respond(phone) {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+*/
+
+.work {
+  background-color: $color-base;
+  padding: 12rem 3rem;
+  @include respond(tab-port) {
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__text {
+    &-experience {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      height: 2.4rem;
+      color: $color-light-grey;
+      text-transform: uppercase;
+
+      @include respond(tab-port) {
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-bottom: 2rem;
+      }
+
+
+    }
+    &-companies {
+      //width: 78rem;
+      //height: 13.2rem;
+      //left: 7.2rem;
+      //top: 15.2rem;
+      color: $color-text;
+      line-height: 6.61rem;
+      margin-bottom: 6rem;
+
+      @include respond(tab-port) {
+        font-size: 4rem;
+        line-height: 4.2rem;
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+
+    &__1 {
+      @include respond(tab-port) {
+        padding-top: 2rem;
+      }
+
+      &-number {
+        color: $color-light-grey;
+      }
+
+      &__companies {
+        color: $color-text;
+        margin-bottom: 1rem;
+        //width: 33.9rem;
+        //height: 2.9rem;
+
+        &-color1 {
+          color: $color-green-accent;
+        }
+
+        @include respond(tab-port) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-paragraph {
+        color: $color-light-grey;
+        width: 36.8rem;
+        height: 4.8rem;
+        top: 18.5rem;
+        line-height: 2.4rem;
+
+        @include respond(tab-port) {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    &__2 {
+      @include respond(tab-port) {
+        padding-top: 2rem;
+      }
+      &-number {
+        color: $color-dark-grey;
+      }
+
+      &__companies {
+        color: $color-text;
+        margin-bottom: 1rem;
+
+        &-color2 {
+          color: $color-primary;
+        }
+
+        @include respond(tab-port) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+          margin-bottom: 5rem;
+        }
+      }
+
+      &-paragraph {
+        color: $color-light-grey;
+        width: 36.8rem;
+        height: 4.8rem;
+        top: 18.5rem;
+        line-height: 2.4rem;
+
+        @include respond(tab-port) {
+          font-size: 2rem;
+          line-height: 3rem;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    &__3 {
+      @include respond(tab-port) {
+        padding-top: 2rem;
+      }
+
+      &-number {
+        color: $color-dark-grey;
+      }
+
+      &__companies {
+        color: $color-text;
+        margin-bottom: 1rem;
+
+        &-color3 {
+          color: $color-pink-accent;
+        }
+
+        @include respond(tab-port) {
+          font-size: 3rem;
+          line-height: 3.4rem;
+          margin-bottom: 5rem;
+        }
+      }
+
+      &-paragraph {
+        color: $color-light-grey;
+        width: 36.8rem;
+        height: 4-8rem;
+        top: 18.5rem;
+        line-height: 2.4rem;
+
+        @include respond(tab-port) {
           font-size: 2rem;
           line-height: 3rem;
           margin-bottom: 2rem;

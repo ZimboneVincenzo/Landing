@@ -1,3 +1,4 @@
+/*
 .business {
   padding-top: 15rem;
   background-color: $color-base;
@@ -89,6 +90,114 @@
         border: none;
 
         @include respond(phone) {
+          font-size: 2.2rem;
+          line-height: 3.5rem;
+          height: 9rem;
+        }
+      }
+    }
+  }
+}
+*/
+.business {
+  padding: 15rem;
+  background-color: $color-base;
+
+  @include respond(tab-port) {
+    padding: 6rem 2rem;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+
+    &__text {
+      @include respond(tab-min) {
+        justify-content:flex-end;
+        width: 50%;
+      }
+
+      &-title {
+        line-height: 6.6rem;
+        color: $color-text;
+        margin-bottom: 2rem;
+
+        @include respond(tab-port) {
+          font-size: 4rem;
+          line-height: 4.2rem;
+          margin-bottom: 3rem;
+        }
+      }
+
+      &-paragraph {
+        line-height: 2.7rem;
+        color: #8491a0;
+
+        @include respond(tab-port) {
+          font-size: 2.3rem;
+          line-height: 3.5rem;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    &__form {
+      @include respond(tab-min) {
+        width: 50%;
+        align-self: center;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+
+      &-label {
+        line-height: 2.4rem;
+        color: $color-text;
+
+        @include respond(tab-port) {
+          font-size: 2rem;
+          line-height: 3rem;
+        }
+      }
+
+      &-input {
+        background-color: $color-level-1;
+        border: none;
+        @include respond(tab-port) {
+          height: 6.5rem;
+        }
+
+        @include respond(tab-min) {
+          height: 5rem;
+        }
+      }
+
+      &-message {
+        background-color: $color-level-1;
+        border: none;
+
+        @include respond(tab-port) {
+          height: 12rem;
+        }
+
+        @include respond(tab-min) {
+          height: 10rem;
+        }
+      }
+
+      &-btn {
+        height: 7.5rem;
+        padding: 2.4rem 3.3rem;
+        color: $color-text;
+        background-color: #5221e6;
+        border: none;
+
+        @include respond(tab-port) {
           font-size: 2.2rem;
           line-height: 3.5rem;
           height: 9rem;

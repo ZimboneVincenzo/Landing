@@ -1,3 +1,4 @@
+/*
 .logobar {
   display: flex;
   @include respond(phone) {
@@ -28,6 +29,75 @@
   &__icon {
 
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-base;
+    width: 100%;
+    height: 20rem;
+    //left: 34rem;
+
+    border: 1px solid #181823;
+    box-sizing: border-box;
+  }
+}
+*/
+.logobar {
+  display: flex;
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__total {
+    &-icon {
+      @include respond(tab-port) {
+        display: none;
+      }
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-base;
+      width: 100%;
+      height: 20rem;
+      //left: 34rem;
+
+      border: 1px solid #181823;
+      box-sizing: border-box;
+    }
+  }
+
+  &__group {
+    &-1 {
+      @include respond(tab-port) {
+        display: flex;
+      }
+      @include respond(tab-min) {
+        display: none;
+      }
+    }
+
+    &-2 {
+      @include respond(tab-port) {
+        display: flex;
+      }
+
+      @include respond(tab-min) {
+        display: none;
+      }
+    }
+
+    &-3 {
+      @include respond(tab-port) {
+        display: flex;
+      }
+
+      @include respond(tab-min) {
+        display: none;
+      }
+    }
+  }
+  &__icon {
     display: flex;
     justify-content: center;
     align-items: center;

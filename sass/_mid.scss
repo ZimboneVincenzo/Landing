@@ -1,3 +1,4 @@
+/*
 .mid {
 
   background-color: $color-base;
@@ -83,6 +84,120 @@
 
       @include respond(phone) {
         height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // &__skilset{
+  //background-color: blue;
+  //}
+}
+*/
+.mid {
+  @include respond(tab-min) {
+    height: 60vh;
+  }
+  
+  background-color: $color-base;
+  display: flex;
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__text {
+    /*
+    @include respond(tab-min) {
+      width: 50%;
+    }
+    
+    background-color: $color-peach-accent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    @include respond(tab-port) {
+      padding: 9rem 3rem;
+    }
+*/
+    &__container {
+      @include respond(tab-min) {
+        width: 50%;
+      }
+
+      background-color: $color-peach-accent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 10rem;
+
+      @include respond(tab-port) {
+        padding: 9rem 3rem;
+      }
+      &__div {
+        &-title {
+          margin-bottom: 3rem;
+          line-height: 6.6rem;
+          @include respond(tab-port) {
+            line-height: 4.2rem;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            font-size: 4rem;
+            text-align: center;
+          }
+        }
+
+        &-paragraph {
+          line-height: 2.7rem;
+          @include respond(tab-port) {
+            line-height: 2.7rem;
+            font-size: 2.3rem;
+            padding-bottom: 8rem;
+          }
+
+          color: $color-base;
+        }
+      }
+
+      &-btn {
+        align-self: flex-start;
+        height: 2.4rem;
+
+        border: none;
+        color: $color-base;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 0.8rem;
+        cursor: pointer;
+        background-color: transparent;
+        line-height: 2.7rem;
+        font-size: 1.6rem;
+        @include respond(tab-port) {
+          line-height: 3rem;
+          font-size: 2rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  &__picture {
+    @include respond(tab-min) {
+      width: 50%;
+    }
+    //width: 72rem;
+    //height: 60rem;
+    //left: 72rem;
+    //grid-column:  5 / span 4;
+
+    &__img {
+      height: 100%;
+      width: 100%;
+
+      @include respond(tab-port) {
+        height: 80%;
         width: 100%;
         object-fit: cover;
       }

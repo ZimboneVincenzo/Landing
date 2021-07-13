@@ -1,3 +1,4 @@
+/*
 .dribbble {
   background-color: $color-base;
   display: flex;
@@ -99,6 +100,138 @@
     }
 
     &-p {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+*/
+
+.dribbble {
+  background-color: $color-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20rem;
+
+  @include respond(tab-port) {
+    padding: 8rem 3rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
+
+    &-title {
+      display: inline-block;
+
+      line-height: 6.6rem;
+      color: $color-text;
+
+      @include respond(tab-min) {
+        margin-bottom: 3.5rem;
+      }
+
+      @include respond(tab-port) {
+        font-size: 4rem;
+        line-height: 4.2rem;
+        margin-bottom: 4rem;
+      }
+    }
+    &-paragraph {
+      line-height: 2.7rem;
+      color: #8491a0;
+
+      @include respond(tab-min) {
+        margin-bottom: 3.5rem;
+      }
+
+      @include respond(tab-port) {
+        font-size: 2.2rem;
+        line-height: 3.2rem;
+        margin-bottom: 6rem;
+      }
+    }
+
+    &-btn {
+      @include respond(tab-min) {
+        margin-bottom: 10rem;
+      }
+
+      align-self: start;
+      color: $color-text;
+      line-height: 2.4rem;
+      font-size: 16px;
+
+      height: 2.4rem;
+      border: none;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1rem;
+      cursor: pointer;
+      background-color: transparent;
+
+      @include respond(tab-port) {
+        font-size: 2rem;
+        line-height: 3rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  &__img {
+    
+    height: 100%;
+    position: relative;
+
+    @include respond(tab-port) {
+      position: relative;
+      border-radius: 0.8rem;
+    }
+
+    &__nav {
+      @include respond(tab-port) {
+       
+        width: 100%;
+        height: 5rem;
+        position: absolute;
+        background-color: $color-level-1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      
+      width: 100%;
+      height: 5rem;
+      position: absolute;
+      background-color: $color-level-1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &-link {
+        margin-left: 1rem;
+        width: 100%;
+        border-radius: 50%;
+        height: 2rem;
+        width: 2rem;
+        background-color: #8491a0;
+        @include respond(tab-port) {
+          width: 100%;
+          border-radius: 50%;
+          height: 2rem;
+          width: 2rem;
+          background-color: #8491a0;
+        }
+      }
+    }
+
+    &-p {
+      border-radius: 0.8rem;
       height: 100%;
       width: 100%;
     }

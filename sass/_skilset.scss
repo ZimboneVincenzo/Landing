@@ -1,3 +1,4 @@
+/*
 .skilset {
   background-color: $color-base;
 
@@ -90,6 +91,116 @@
         line-height: 2.4rem;
 
         @include respond(phone) {
+          line-height: 3rem;
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+*/
+
+.skilset {
+  background-color: $color-base;
+
+  padding: 8rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__text {
+    @include respond(tab-min) {
+      max-width: 40rem;
+    }
+
+    display: inline-block;
+    color: $color-text;
+
+    height: 22.5rem;
+    margin-right: 2rem;
+
+    &__title {
+      width: 18.9rem;
+      height: 6.6rem;
+      margin-bottom: 2rem;
+
+      @include respond(tab-port) {
+        font-size: 4rem;
+        line-height: 4.2rem;
+      }
+    }
+
+    &-paragraph {
+      line-height: 2.7rem;
+      //width: 36.8rem;
+      //height: 13.5rem;
+      color: $color-light-grey;
+
+      @include respond(tab-port) {
+        font-size: 2.1rem;
+        line-height: 2.7rem;
+      }
+    }
+  }
+
+  &__skils {
+    @include respond(tab-min) {
+      margin-right: 2rem;
+    }
+   
+    display: flex;
+    flex-direction: column;
+    @include respond(tab-port) {
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+
+    &__card {
+      @include respond(tab-min) {
+        margin-bottom: 4rem;
+      }
+
+      margin-bottom: 2rem;
+
+      @include respond(tab-port) {
+        margin-top: 4rem;
+      }
+
+      &-svg {
+        margin-bottom: 1rem;
+        width: 3.2rem;
+        height: 3.2rem;
+
+        @include respond(tab-port) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-title {
+        margin-bottom: 1rem;
+        //width: 17.7rem;
+        height: 2.9rem;
+        top: 5.6rem;
+        color: $color-text;
+        @include respond(tab-port) {
+          font-size: 3rem;
+          line-height: 2.8rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-paragraph {
+        max-width: 36.8rem;
+        height: 7.2rem;
+        top: 9.7rem;
+        color: $color-light-grey;
+        line-height: 2.4rem;
+
+        @include respond(tab-port) {
           line-height: 3rem;
           font-size: 2rem;
         }

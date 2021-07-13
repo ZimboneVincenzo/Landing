@@ -1,3 +1,4 @@
+/*
 .sticky {
   display: flex;
   justify-content: space-between;
@@ -210,6 +211,266 @@
             //height: 2.4rem;
 
             @include respond(phone) {
+              font-size: 2rem;
+              line-height: 3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+*/
+
+.sticky {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-base;
+
+  @include respond(tab-min) {
+    padding: 6rem 5rem;
+  }
+
+
+  @include respond(tab-port) {
+    flex-direction: column;
+    padding: 3rem 3rem;
+  }
+
+  &__text {
+
+    @include respond(tab-min) {
+      width: 50%;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include respond(tab-port) {
+        padding-top: 6rem;
+        margin-bottom: 6rem;
+      }
+
+      &-title {
+        
+        @include respond(tab-min) {
+         margin-bottom: 2rem;
+        }
+
+
+        line-height: 6.6rem;
+        color: $color-text;
+
+        @include respond(tab-port) {
+          font-size: 4rem;
+          line-height: 4.2rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      &-paragraph {
+        
+
+        line-height: 2.7rem;
+        color: #8491a0;
+
+        @include respond(tab-min) {
+          margin-bottom: 2rem;
+         }
+
+
+        @include respond(tab-port) {
+          font-size: 2.2rem;
+          line-height: 3.2rem;
+          margin-bottom: 4rem;
+        }
+      }
+
+      &-btn {
+        align-self: start;
+        height: 2.4rem;
+        font-size: 16px;
+        color: $color-text;
+        line-height: 2.4rem;
+        border: none;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 1rem;
+        cursor: pointer;
+        background-color: transparent;
+
+        @include respond(tab-port) {
+          font-size: 2rem;
+          line-height: 3rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  &__card {
+
+    @include respond(tab-min) {
+      width: 50%;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    &__container1 {
+      margin-bottom: 12rem;
+      border: 1px solid #5b6876;
+      &-img {
+        height: auto;
+        width: 100%;
+      }
+
+      &__text {
+        padding: 5rem;
+        &-paragraph {
+        
+          line-height: 2.9rem;
+          color: $color-text;
+
+          @include respond(tab-min) {
+            margin-bottom: 3rem;
+           }
+
+          @include respond(tab-port) {
+            font-size: 2.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 6rem;
+          }
+        }
+
+        &__box {
+          &-name {
+           
+            color: #8491a0;
+            line-height: 2.7rem;
+
+            
+
+            @include respond(tab-port) {
+              font-size: 2.2rem;
+              line-height: 3.3rem;
+            }
+          }
+
+          &-company {
+            color: #8491a0;
+            //width: 12.8rem;
+            //height: 2.4rem;
+
+            @include respond(tab-port) {
+              font-size: 2rem;
+              line-height: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__container2 {
+      margin-bottom: 12rem;
+      border: 1px solid #5b6876;
+      &-img {
+        height: auto;
+        width: 100%;
+      }
+
+      &__text {
+        padding: 5rem;
+        &-paragraph {
+          //width: 50.8rem;
+          //height: 14.5rem;
+          line-height: 2.9rem;
+          color: $color-text;
+
+          @include respond(tab-min) {
+            margin-bottom: 3rem;
+           }
+
+          @include respond(tab-port) {
+            font-size: 2.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 6rem;
+          }
+        }
+
+        &__box {
+          &-name {
+            //width: 12.9rem;
+            //height: 2.7rem;
+            color: #8491a0;
+            line-height: 2.7rem;
+
+            @include respond(tab-port) {
+              font-size: 2.2rem;
+              line-height: 3.3rem;
+            }
+          }
+
+          &-company {
+            color: #8491a0;
+            //width: 12.8rem;
+            //height: 2.4rem;
+
+            @include respond(tab-port) {
+              font-size: 2rem;
+              line-height: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    &__container3 {
+      margin-bottom: 12rem;
+      border: 1px solid #5b6876;
+      &-img {
+        height: auto;
+        width: 100%;
+      }
+
+      &__text {
+        padding: 5rem;
+        &-paragraph {
+          
+          line-height: 2.9rem;
+          color: $color-text;
+
+          @include respond(tab-min) {
+            margin-bottom: 3rem;
+           }
+
+          @include respond(tab-port) {
+            font-size: 2.2rem;
+            line-height: 3.2rem;
+            margin-bottom: 6rem;
+          }
+        }
+
+        &__box {
+          &-name {
+            //width: 12.9rem;
+            //height: 2.7rem;
+            color: #8491a0;
+            line-height: 2.7rem;
+
+            @include respond(tab-port) {
+              font-size: 2.2rem;
+              line-height: 3.3rem;
+            }
+          }
+
+          &-company {
+            color: #8491a0;
+            //width: 12.8rem;
+            //height: 2.4rem;
+
+            @include respond(tab-port) {
               font-size: 2rem;
               line-height: 3rem;
             }
