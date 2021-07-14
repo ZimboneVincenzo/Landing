@@ -154,9 +154,11 @@
    
     display: flex;
     flex-direction: column;
+
     @include respond(tab-port) {
       flex-direction: column;
       margin-top: 1rem;
+      margin-bottom: 3rem;
     }
 
     &__card {
@@ -167,7 +169,7 @@
       margin-bottom: 2rem;
 
       @include respond(tab-port) {
-        margin-top: 4rem;
+        margin-top: 5rem;
       }
 
       &-svg {

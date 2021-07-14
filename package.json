@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "watch:sass": "sass sass/main.scss style.css -w",
+    "watch:sass": "sass sass/main.scss css/style.css -w",
     "start": "npm-run-all --parallel dev watch:sass"
   },
   "devDependencies": {

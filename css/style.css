@@ -900,7 +900,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 0 10rem;
+  padding: 0 12rem;
 }
 @media only screen and (min-width: 56.25em) {
   .mid__text__container {
